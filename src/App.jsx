@@ -8,13 +8,14 @@ import ProjectFormPage from './components/ProjectFormPage/ProjectFormPage';
 function App() {
 
   return (
-
+    <>
     <Routes>
       <Route path='/' element={ <HomePage/> }/>
       <Route path='/profile' element={ <ProfilePage/> }/>
-      <Route path='/project-name' element={ <ProjectPage/> }/>
-      <Route path='/search' element={ <ProjectFormPage/> }/>
+      <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
+      <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
     </Routes>
+    </>
   )
 }
 
