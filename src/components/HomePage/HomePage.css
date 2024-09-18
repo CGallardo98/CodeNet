@@ -1,0 +1,18 @@
+.home-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center; /* Centra la imagen en el carrusel */
+    width: 140px;
+}
+
+.carousel-image {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    max-width: 600px; /* Tamaño máximo de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(138, 48, 48, 0.1); /* Sombra */
+}
