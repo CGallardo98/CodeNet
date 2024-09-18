@@ -6,7 +6,7 @@ import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
 import ProjectFormPage from './components/ProjectFormPage/ProjectFormPage';
-
+import Footer from './components/Footer/Footer'; // Importa el Footer
 
 
 const App = () => {
@@ -73,6 +73,7 @@ const App = () => {
           <Route path='/project-name' element={<ProjectPage />} />
           <Route path='/search' element={<ProjectFormPage />} />
         </Routes>
+        <Footer /> {/* El footer presente en todas las páginas */}
       </div>
 
       
@@ -83,4 +84,5 @@ const App = () => {
 };
 
 
-export default App
+
+export default App;

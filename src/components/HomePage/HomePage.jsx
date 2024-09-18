@@ -3,6 +3,7 @@ import { useState } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import Footer from "../Footer/Footer"; 
 
 export default function HomePage({productos}) {
 
@@ -54,18 +55,6 @@ const settings = {
       ))}
     </Slider>
     
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p> 
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
 
     <div>
       <button onClick={()=>ver("Mas Visitados")}>Más Visitados</button>
@@ -82,3 +71,4 @@ const settings = {
     </>
     );
   };
+
