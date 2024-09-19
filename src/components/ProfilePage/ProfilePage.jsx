@@ -9,6 +9,7 @@ const ProfilePage = () => {
         email: 'Hola 👋🏼 Mi nombre es Brais Moure',
         bio: 'Soy ingeniero de software desde hace más de 14 años. Actualmente trabajo como freelance full-stack y creo contenido formativo sobre programación y tecnología en redes. ',
         joinedDate: 'Enero 2023',
+        redes: 'https://www.youtube.com/@mouredev',
     };
 
     const posts = [
@@ -98,6 +99,7 @@ const ProfilePage = () => {
                 <p className="user-email">{user.email}</p>
                 <p className="user-bio">{user.bio}</p>
                 <p className="user-joined">Miembro desde: {user.joinedDate}</p>
+                <p className="user-redes">{user.redes}</p>
             </div>
 
             {/* Sección de publicaciones */}

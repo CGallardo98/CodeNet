@@ -11,7 +11,7 @@ function Footer() {
       <div className="footer-section">
         <h3>Nosotros</h3>
         <p>Somos un grupo de desarrolladores</p>
-        <p1>entusiastas y deseosos de aprender.</p1>
+        <p>entusiastas y deseosos de aprender.</p>
       </div>
 
       <div className="footer-section">

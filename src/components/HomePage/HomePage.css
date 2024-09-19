@@ -6,13 +6,18 @@
 .carousel-item {
     display: flex;
     justify-content: center; /* Centra la imagen en el carrusel */
-    width: 140px;
+    width: 1280px;
+    height: 140;
 }
 
 .carousel-image {
     width: 100%; /* Ajusta el ancho según tus necesidades */
-    max-width: 600px; /* Tamaño máximo de la imagen */
+    max-width: 1280px; /* Tamaño máximo de la imagen */
     height: auto; /* Mantiene la relación de aspecto */
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 2px 5px rgba(138, 48, 48, 0.1); /* Sombra */
+}
+
+.activate {
+    background-color: rgb(155, 154, 154);
 }
