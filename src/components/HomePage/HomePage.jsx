@@ -4,14 +4,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import Footer from "../Footer/Footer"; 
+import "./HomePage.css";
 
 export default function HomePage({productos}) {
 
 //Filtro de productos
 const [filtroproducto, setFiltroproducto] = useState(productos)  
-const masvisitados = "Mas Visitados"
-const parati = "Para Ti"
-const siguiendo = "Siguiendo"
+
 const ver = (seccion) => {
   if (seccion === "Mas Visitados") {
     setFiltroproducto([...productos.filter(producto => producto.rating > 10)])
@@ -23,13 +22,14 @@ const ver = (seccion) => {
     setFiltroproducto([...productos.filter(producto => producto.autor === 'MoureDev')])
   }
   console.log(filtroproducto)
+  setActiveButton(seccion)
 }
 
-//Constante img
+//Constante img para Slider
 const images = [
-  'https://i.postimg.cc/rwkw5xvb/moure.png',
-  'https://i.postimg.cc/yxGSVxxK/midu.png',
-  'https://i.postimg.cc/50RtzGVq/miriam.png',   
+  'https://i.postimg.cc/0y76H3b2/mour.png',
+  'https://i.postimg.cc/0NwqfRQc/midud.png',
+  'https://i.postimg.cc/3Jx5qDNy/mm.png',   
 ];
 
 const settings = {
@@ -42,6 +42,7 @@ const settings = {
   autoplaySpeed: 2000,
 };
 
+const [activeButton, setActiveButton] = useState("Mas Visitados");
 
   return (
     
@@ -59,10 +60,18 @@ const settings = {
     <br />
     
     <div>
-      <button onClick={()=>ver("Mas Visitados")}>Más Visitados</button>
-      <button onClick={()=>ver("Para Ti")}>Para Tí</button>
-      <button onClick={()=>ver("Siguiendo")}>Siguiendo</button>
+      <button 
+      className={activeButton === "Mas Visitados"?"activate":''}
+      onClick={()=>ver("Mas Visitados")}>Más Visitados</button>
+      <button 
+      className={activeButton === "Para Ti"?"activate":''}
+      onClick={()=>ver("Para Ti")}>Para Tí</button>
+      <button 
+      className={activeButton === "Siguiendo"?"activate":''}
+      onClick={()=>ver("Siguiendo")}>Siguiendo</button>
     </div>
+
+    
 
     <div className="producto-lista">
       {filtroproducto.map(producto => (

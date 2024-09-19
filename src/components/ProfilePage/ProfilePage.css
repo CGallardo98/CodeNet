@@ -4,11 +4,11 @@
 }
 
 .profile-card {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    max-width: 400px;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -26,7 +26,7 @@
 }
 
 .user-email {
-    color: #ffffff;
+    color: #000000;
     font-size: 1.2em;
 }
 
@@ -36,11 +36,14 @@
 }
 
 .user-joined {
-    color: #ffffff;
+    color: #000000;
 }
 
 .user-posts {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap:inherit;
+    
+    justify-content: flex-start; /* Centra los tabs horizontalmente */
+    width: 1280px;
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
 }
