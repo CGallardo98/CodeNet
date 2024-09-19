@@ -1,0 +1,88 @@
+.footer {
+  padding: 20px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-around; /* Mantiene la distribución horizontal */
+  flex-wrap: wrap; /* Para ajustar en pantallas pequeñas */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.footer-section button:hover {
+  background-color: #e0e0e0;
+}
+
+.footer-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.footer-section button[type="submit"] {
+  background-color: #0220c9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.footer-section button[type="submit"]:hover {
+  background-color: #272727;
+}
+
+/* La parte inferior del footer */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  width: 100%;
+  border-top: 1px solid #ccc; /* Línea separadora opcional */
+  margin-top: 20px; /* Añade espacio superior para separarlo del resto */
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  white-space: pre-line;
+  color: red;
+  margin-top: 5px;
+  font-size: 15px;
+}
+.footer-logo {
+  width: 40px;  /* Ajusta el ancho como prefieras */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+  vertical-align: middle; /* Alinea la imagen con el texto */
+}

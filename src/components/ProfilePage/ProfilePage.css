@@ -1,0 +1,46 @@
+.profile-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.user-email {
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.user-bio {
+    margin: 15px 0;
+    
+}
+
+.user-joined {
+    color: #ffffff;
+}
+
+.user-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
