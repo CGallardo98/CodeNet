@@ -64,25 +64,16 @@ const App = () => {
 ];
 
   return (
-      <>
-
-      <div className="app">
-        <Routes>
-          <Route path='/' element={<HomePage productos={productos}/>} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/project-name' element={<ProjectPage />} />
-          <Route path='/search' element={<ProjectFormPage />} />
-        </Routes>
-        <Footer /> {/* El footer presente en todas las páginas */}
-      </div>
-
-      
-        
-      </>
-
-  );
-};
-
-
+    <>
+    <Routes>
+      <Route path='/' element={ <HomePage/> }/>
+      <Route path='/profile' element={ <ProfilePage/> }/>
+      <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
+      <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
+    </Routes>
+    <Footer /> {/* El footer presente en todas las páginas */}
+    </>
+  )
+}
 
 export default App;

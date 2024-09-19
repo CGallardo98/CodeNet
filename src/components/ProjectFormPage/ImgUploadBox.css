@@ -1,0 +1,70 @@
+.cover-img-container {
+    background-color: #F2F2F2;
+    width: 50rem;
+    height: auto;
+    aspect-ratio: 1280 / 350;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Needed for inner box positioning */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .cover-img-container.image-selected {
+    aspect-ratio: 11/4; /* Aspect ratio when image is selected */
+}
+
+  .img-preview {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    max-height: 100%;
+  }
+  
+  .img-upload-box {
+    width: 300px; /* Width relative to the container */
+    aspect-ratio: 410 / 152;
+    height: auto;
+    /*text-align: center;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0px;
+    gap: 0.1rem;
+    border-radius: 6px;
+    border: 1px dashed var(--Primary-Gray-300, #D2D5DA);
+    background: var(--Primary-Gray-50, #F9FAFB);
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .img-upload-icon {
+    width: 1.5rem; /* Icon width */
+    height: 1.5rem; /* Icon height */
+    margin: 0.5rem;
+  }
+
+  .img-upload-text {
+    color: var(--Primary-Gray-500, #6D7280);
+    font-family: Inter, sans-serif; /* Font family with fallback */
+    font-size: 0.9rem; /* Font size */
+    font-style: normal;
+    font-weight: 400; /* Font weight */
+    line-height: 1.6; /* Line height */
+    letter-spacing: -0.02em; /* Letter spacing */
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .upload-link {
+    color: var(--Primary-Blue-300, #93C5FD); /* Color for "carga" */
+  }
+  
+  .upload-size {
+    color: var(--Primary-Gray-500, #6D7280);
+    font-family: Inter, sans-serif; /* Font family with fallback */
+    font-size: 0.7rem; /* Slightly smaller font size for the size text */
+    font-weight: 400; /* Font weight */
+    text-align: center; /* Center text horizontally */
+  }
