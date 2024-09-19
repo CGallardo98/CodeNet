@@ -66,7 +66,7 @@ const App = () => {
   return (
     <>
     <Routes>
-      <Route path='/' element={ <HomePage/> }/>
+      <Route path='/' element={ <HomePage productos={productos}/> }/>
       <Route path='/profile' element={ <ProfilePage/> }/>
       <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
       <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
