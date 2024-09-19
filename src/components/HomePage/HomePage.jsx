@@ -55,7 +55,9 @@ const settings = {
       ))}
     </Slider>
     
-
+    <br />
+    <br />
+    
     <div>
       <button onClick={()=>ver("Mas Visitados")}>Más Visitados</button>
       <button onClick={()=>ver("Para Ti")}>Para Tí</button>
