@@ -7,6 +7,7 @@ import ProfilePage from './components/ProfilePage/ProfilePage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
 import ProjectFormPage from './components/ProjectFormPage/ProjectFormPage';
 import Footer from './components/Footer/Footer'; // Importa el Footer
+import './index.css'
 
 
 const App = () => {
