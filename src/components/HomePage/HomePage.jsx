@@ -12,6 +12,10 @@ export default function HomePage({productos}) {
 const [filtroproducto, setFiltroproducto] = useState(productos)  
 
 const ver = (seccion) => {
+  if (seccion === "Todos") {
+    console.log("productos",productos)
+    setFiltroproducto([...productos])
+  }
   if (seccion === "Mas Visitados") {
     setFiltroproducto([...productos.filter(producto => producto.rating > 10)])
   }
@@ -21,7 +25,8 @@ const ver = (seccion) => {
   if (seccion === "Siguiendo") {
     setFiltroproducto([...productos.filter(producto => producto.autor === 'MoureDev')])
   }
-  console.log(filtroproducto)
+
+  
   setActiveButton(seccion)
 }
 
@@ -42,7 +47,7 @@ const settings = {
   autoplaySpeed: 2000,
 };
 
-const [activeButton, setActiveButton] = useState("Mas Visitados");
+const [activeButton, setActiveButton] = useState("Todos");
 
   return (
     
@@ -60,6 +65,9 @@ const [activeButton, setActiveButton] = useState("Mas Visitados");
     <br />
     
     <div>
+      <button 
+      className={activeButton === "Todos"?"activate":''}
+      onClick={()=>ver("Todos")}>Todos</button>
       <button 
       className={activeButton === "Mas Visitados"?"activate":''}
       onClick={()=>ver("Mas Visitados")}>Más Visitados</button>
