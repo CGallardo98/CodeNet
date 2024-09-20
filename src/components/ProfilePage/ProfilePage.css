@@ -45,5 +45,5 @@
     
     justify-content: flex-start; /* Centra los tabs horizontalmente */
     width: 1280px;
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    /*cursor: pointer; /* Cambia el cursor al pasar el ratón */
 }
