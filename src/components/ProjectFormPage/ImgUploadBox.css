@@ -1,6 +1,6 @@
 .cover-img-container {
     background-color: #F2F2F2;
-    width: 50rem;
+    width: 100%;
     height: auto;
     aspect-ratio: 1280 / 350;
     display: flex;
@@ -41,8 +41,8 @@
   }
 
   .img-upload-icon {
-    width: 1.5rem; /* Icon width */
-    height: 1.5rem; /* Icon height */
+    width: 1.7rem; /* Icon width */
+    height: 1.7rem; /* Icon height */
     margin: 0.5rem;
   }
 

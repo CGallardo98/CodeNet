@@ -1,0 +1,80 @@
+/* PreviewPopup.css */
+/* Overlay for the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;  /* High z-index to overlay on top of everything */
+}
+
+/* Modal content box */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  height: 90%;  /* Increase height to 90% of the viewport */
+  max-width: 1000px;
+  overflow-y: auto;  /* Add vertical scroll when content overflows */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h4 {
+  margin: 5px;
+}
+
+/* Close button (X) */
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.blog-entry-preview {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* This makes sure the content grows to fill the popup */
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Blog content style */
+.blog-content {
+  width: 100%;  /* Make content take full width */
+  margin: 10px auto;
+  max-width: 800px; /* Adjust width similar to your actual blog page */
+  padding: 10px; /* Add padding inside the content */
+  background-color: #f9f9f9;  /* Background similar to your blog page */
+  border-radius: 8px;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+.blog-content * {
+  margin: 5px auto; /* Reset all margins */
+}
+
+/* Previewed cover image */
+.cover-img-preview {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}

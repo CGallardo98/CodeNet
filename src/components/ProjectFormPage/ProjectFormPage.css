@@ -6,41 +6,44 @@
   box-sizing: border-box;
 }
 
-body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-  }
+input::placeholder, 
+textarea::placeholder, 
+select::-webkit-input-placeholder,
+.css-hlgwow {
+    font-family: Arial, sans-serif; /* Use Arial or AppleSystemUIFont */
+    font-size: 14px; /* Adjust as needed */
+    color: #818181; /* Adjust as needed */
+}
 
- /* Page-wide container to control the layout */
- .form-page {
-    max-width: 1280px;
-    min-width: 800px;
-    width: 100%;
-    margin: 0 auto; /* Center the content horizontally */
-    display: flex;
-    place-items: start center;
-    justify-content: space-between;
-    height: auto; /* Ensure the container only takes up space based on its content */
-    box-sizing: border-box;
+/* * {
+  outline: 1px solid red; /* This helps visualize the space and where content is
+} */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .blog-entry-form {
-  display: flex;
   width: 100%;
+  display: flex;
   flex-direction: column;
 }
 
 .columns {
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 1.2rem;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
  .left-column {
-  flex: 1;
-  max-width: 72%;
+  /* flex: 3; */
+  width: 72%;
 } 
 
 /* LEFT COLUMN STYLES */
@@ -72,9 +75,9 @@ body {
 /* Button styles */
 .button-group {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 0rem;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-top: 0.2rem;
   margin-bottom: 2rem;
 }
 
@@ -82,6 +85,22 @@ button {
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+.preview-btn {
+  background-color: #778df0;
+  color: #fff;
+  border: none;
+}
+
+.submit-btn {
+  background-color: #4B6BFB;
+  color: #fff;
+  border: none;
 }
 
 .cancel-btn {
@@ -90,28 +109,74 @@ button {
   color: #4B6BFB;
 }
 
-.publish-btn {
-  background-color: #4B6BFB;
-  color: #fff;
-  border: none;
+.cancel-btn:hover {
+  background-color: #eee;
 }
+
+.change-btn {
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.5rem;
+}
+
+/* Styling for the 'Cambiar' button */
+.change-btn {
+  background-color: #e0e0e0; /* Light gray background */
+  color: #555; /* Dark gray text */
+  padding: 2px 6px; /* Smaller padding to make the button smaller */
+  border: 1px solid #ccc; /* Thin border */
+  border-radius: 3px; /* Slightly rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: Arial, sans-serif; /* Consistent font */
+  font-size: 12px; /* Smaller font size */
+  transition: background-color 0.2s ease; /* Smooth transition on hover */
+  margin-left: 8px; /* Small space between text and button */
+}
+
+.change-btn:hover {
+  background-color: #d0d0d0; /* Slightly darker gray on hover */
+}
+
+.change-btn:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 3px #aaa; /* Soft shadow on focus */
+}
+
 
 /* RIGHT COLUMN STYLES*/
 .right-column {
-  flex: 1;
-  max-width: 28%;
+  /* flex: 1; */
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  /*justify-content: flex-start;
+  box-sizing: border-box;
+   */
 }
 
 /* Source Code File Input */
-.file-ipload-box {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  display: flex;
+.file-upload-box {
+  width: 100%;
+  /* display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensures the text aligns with the icon */
+  font-weight: 500; */
+}
+.above-text {
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left; /* Ensure text is aligned to the left */
   color: #333;
+}
+.text-icon {
+  width: 1rem; /* Icon width */
+  height: 1rem; /* Icon height */
+  margin-left: 0.5rem;
+}
+
+.file-upload-label {
+  cursor: pointer;
 }
 
 .file-input-box {
@@ -123,13 +188,12 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 0px;
+  padding: 0.5rem;
   gap: 0.1rem;
   border-radius: 6px;
   border: 1px dashed var(--Primary-Gray-300, #D2D5DA);
   background: var(--Primary-Gray-50, #F9FAFB);
   box-sizing: border-box;
-  cursor: pointer;
 }
 
 .file-upload-icon {
@@ -138,10 +202,10 @@ button {
   margin: 0.5rem;
 }
 
-.file-upload-text {
-  color: var(--Primary-Gray-500, #6D7280);
-  font-family: Inter, sans-serif; /* Font family with fallback */
-  font-size: 0.8rem; /* Font size */
+.file-upload-text, .file-upload-size {
+  color: #808080;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem; /* Font size */
   font-style: normal;
   font-weight: 400; /* Font weight */
   line-height: 1.6; /* Line height */
@@ -149,105 +213,63 @@ button {
   text-align: center; /* Center text horizontally */
 }
 
+.file-upload-text.uploaded {
+  display: inline-flex; /* Make text and button inline */
+  align-items: center;  /* Align text and button vertically */
+  justify-content: flex-start; /* Align content to the left */
+  width: 100%; /* Ensure it takes the full width of the container */
+  font-size: 14px;
+  color: #555;
+  gap: 0.25rem; /* Small space between text and button */
+}
+
 .file-upload-link {
   color: var(--Primary-Blue-300, #93C5FD); /* Color for "carga" */
 }
 
 .file-upload-size {
-  color: var(--Primary-Gray-500, #6D7280);
-  font-family: Inter, sans-serif; /* Font family with fallback */
-  font-size: 0.6rem; /* Slightly smaller font size for the size text */
-  font-weight: 400; /* Font weight */
-  text-align: center; /* Center text horizontally */
-}
-
-
-.file-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.file-icon {
-  margin-right: 0.5rem;
-}
-
-.file-instructions {
-  font-size: 0.875rem;
-  color: #4B5563;
-  text-align: center;
+  font-size: 0.8rem; /* Slightly smaller font size for the size text */
+  
 }
 
 /* Link Input */
 .link-input {
-  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
-.link-label {
+/*.link-label {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; 
+  width: 100%;
+}*/
+
+.link-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ensure full width */
+  /*margin-bottom: 1.5rem; /* Space below for spacing between sections */
 }
 
-.link-icon {
-  margin-right: 0.5rem;
+
+.link-box {
+  padding: 0.75rem; /* Add padding inside the input box */
+  border: 1px solid var(--Primary-Gray-300, #D2D5DA); /* Border styling */
+  border-radius: 6px; /* Rounded corners */
+  width: 100%; /* Full width input */
+  font-size: 1rem; /* Adjust font size */
+  background-color: var(--Primary-Gray-50, #F9FAFB); /* Light background */
+  color: var(--Primary-Gray-700, #4A5568); /* Text color */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: border-color 0.2s ease-in-out; /* Smooth transition for focus */
 }
 
 /* Category Dropdown */
 .category-dropdown {
-  margin-bottom: 1.5rem;
-}
-
-.category-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* 
-
-/* Style for category dropdown 
-.css-yk16xz-control {
-  margin-top: 20px;
-}
-
-/* Submit and Cancel buttons 
-.form-buttons {
+  width: 100%;
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.submit-btn, .cancel-btn {
-  padding: 12px 20px;
-  font-size: 1rem;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.submit-btn {
-  background-color: #007bff;
-}
-
-.cancel-btn {
-  background-color: #f44336;
-}
-
-.submit-btn:hover {
-  background-color: #0056b3;
-}
-
-.cancel-btn:hover {
-  background-color: #d32f2f;
-}
- */
+  flex-direction: column;
+  text-align: left;}

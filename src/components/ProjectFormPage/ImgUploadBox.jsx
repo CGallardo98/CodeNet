@@ -3,14 +3,16 @@ import React, { useState } from 'react';
 import './ImgUploadBox.css';
 
 // Caja para añadir la foto de portada de la entrada de blog
-export default function ImgUploadBox() {
+export default function ImgUploadBox({onImgSelect}) {
   const [selectedImage, setSelectedImage] = useState(null);
 
   //Recibe la info de la imagen seleccionada
-  const handleFileChange = (e) => {
+  const handleImgSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file));
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl); 
+      onImgSelect(file);
     }
   };
 
@@ -46,7 +48,7 @@ export default function ImgUploadBox() {
             type='file'
             id='file-upload'
             accept='image/*'
-            onChange={handleFileChange}
+            onChange={handleImgSelect}
             style={{ display: 'none' }}
         />
     </div>
