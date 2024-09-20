@@ -69,6 +69,7 @@ const [activeButton, setActiveButton] = useState("Mas Visitados");
       <button 
       className={activeButton === "Siguiendo"?"activate":''}
       onClick={()=>ver("Siguiendo")}>Siguiendo</button>
+    
     </div>
 
     

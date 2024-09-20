@@ -92,10 +92,16 @@ const ProfilePage = () => {
             <div className="profile-card">
                 <img 
                     src={user.profilePicture} 
-                    alt={`${user.name}'s perfil`} 
+                    alt={"${user.name}'s perfil"} 
                     className="profile-picture"
                 />
-                <h1 className="user-name">{user.name}</h1>
+                <h1 className="user-name">
+                    <a href={"https://mouredev.com/blog/"} 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    {user.name}
+                </a></h1>
+                
                 <p className="user-email">{user.email}</p>
                 <p className="user-bio">{user.bio}</p>
                 <p className="user-joined">Miembro desde: {user.joinedDate}</p>
@@ -109,6 +115,7 @@ const ProfilePage = () => {
                     <UserPostCard key={post.id} post={post} />
                 ))}
             </div>
+            
         </div>
     );
 };
