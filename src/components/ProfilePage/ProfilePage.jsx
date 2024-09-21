@@ -15,24 +15,24 @@ const ProfilePage = () => {
     const posts = [
         {
             id: 1,
-            title: 'Confesiones de un Programador',
-            content: 'De tener que confesarme, qué mejor que con KeepCoding, referentes en enseñanza online de programación informática. Esta es mi entrevista más larga hasta la fecha, todo un orgullo poder hablar de mi carrera de esta manera. ¡Espero que os guste!',
-            image: 'https://i.postimg.cc/tT3c3zX7/1.png',
-            enlace: 'https://mouredev.com/blog/2019/01/22/confesiones-de-un-programador/',
+            title: 'Curso Completo de Git & GitHub',
+            content: 'Git y GitHub son dos herramientas fundamentales en el mundo del desarrollo de software. Este es un curso desde cero creado para aprender a trabajar con ellas y así mejorar como programadores.',
+            image: 'https://i.postimg.cc/VsHNSGdF/Git0.png',
+            enlace: 'https://github.com/mouredev/hello-git/',
         },
         {
             id: 2,
-            title: 'Apps Made in Monforte',
-            content: 'El diario El Progreso ha realizado un reportaje sobre mi trayectoria y regreso a Monforte de Lemos, mi ciudad natal en la que vivo actualmente y desempeño mi trabajo de desarrollador de software freelance. Puedes leer el artículo completo pinchando en Brais Moure: Apps made in Monforte.',
-            image: 'https://i.postimg.cc/T2Q7T1h8/2.png',
-            enlace: 'https://mouredev.com/blog/2018/11/22/apps-made-in-monforte/',
+            title: 'Curso para Aprender Python',
+            content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base.',
+            image: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
+            enlace: 'https://github.com/mouredev/Hello-Python/',
         },
         {
             id: 3,
-            title: 'Mis 5 Herramientas para Mejorar tu Productividad en #crecemosDH',
-            content: 'Hoy nace #crecemosDH, una iniciativa de Dinahosting. Trucos y consejos para utilizar en el día a día de tu empresa 💪🏼. En este primer vídeo os cuento cuáles son las 5 herramientas de productividad que uso a diario. ¡Espero que os resulte útil!',
-            image: 'https://i.postimg.cc/Bvc5N7KW/3.png',
-            enlace: 'https://mouredev.com/blog/2018/11/19/5-herramientas-para-mejorar-tu-productividad/',
+            title: 'Curso para Aprender SQL y BD Relacionales',
+            content: 'Curso completo de 7 horas para aprender los fundamentos del lenguaje SQL y bases de datos relacionales. Más de 80 lecciones y 50 comandos desde cero. Con MySQL y PostgreSQL.',
+            image: 'https://i.postimg.cc/QN6FQNn1/SQL0.png',
+            enlace: 'https://github.com/mouredev/hello-sql/',
         },
     ];
 
