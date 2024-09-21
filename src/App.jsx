@@ -8,6 +8,7 @@ import ProjectPage from './components/ProjectPage/ProjectPage';
 import ProjectFormPage from './components/ProjectFormPage/ProjectFormPage';
 import Header from './components/Header/Header'; // Importa el Footer
 import Footer from './components/Footer/Footer'; // Importa el Footer
+import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 
 
@@ -73,6 +74,7 @@ const App = () => {
       <Route path='/profile' element={ <ProfilePage/> }/>
       <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
       <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
+      <Route path="/category/:categoria" element={<CategoryPage productos={productos} />} /> {/* Nueva ruta */}
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}
     </>

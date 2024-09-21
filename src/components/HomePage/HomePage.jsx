@@ -26,7 +26,6 @@ const ver = (seccion) => {
     setFiltroproducto([...productos.filter(producto => producto.autor === 'MoureDev')])
   }
 
-  
   setActiveButton(seccion)
 }
 
@@ -91,4 +90,3 @@ const [activeButton, setActiveButton] = useState("Todos");
     </>
     );
   };
-

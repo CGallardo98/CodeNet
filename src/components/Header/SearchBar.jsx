@@ -17,7 +17,7 @@ function SearchBar() {
         value={query} 
         onChange={(e) => setQuery(e.target.value)} 
       />
-      <button type="submit">🔍</button>
+      <button type="submit" className="search-button">🔍</button>
     </form>
   );
 }
