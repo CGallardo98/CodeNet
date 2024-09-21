@@ -25,14 +25,14 @@ const ProfilePage = () => {
             title: 'Apps Made in Monforte',
             content: 'El diario El Progreso ha realizado un reportaje sobre mi trayectoria y regreso a Monforte de Lemos, mi ciudad natal en la que vivo actualmente y desempeño mi trabajo de desarrollador de software freelance. Puedes leer el artículo completo pinchando en Brais Moure: Apps made in Monforte.',
             image: 'https://i.postimg.cc/T2Q7T1h8/2.png',
-            enlace: 'https://mouredev.com/blog/2019/01/22/apps-made-in-monforte/',
+            enlace: 'https://mouredev.com/blog/2018/11/22/apps-made-in-monforte/',
         },
         {
             id: 3,
             title: 'Mis 5 Herramientas para Mejorar tu Productividad en #crecemosDH',
             content: 'Hoy nace #crecemosDH, una iniciativa de Dinahosting. Trucos y consejos para utilizar en el día a día de tu empresa 💪🏼. En este primer vídeo os cuento cuáles son las 5 herramientas de productividad que uso a diario. ¡Espero que os resulte útil!',
             image: 'https://i.postimg.cc/Bvc5N7KW/3.png',
-            enlace: 'https://mouredev.com/blog/2019/01/22/apps-made-in-monforte/',
+            enlace: 'https://mouredev.com/blog/2018/11/19/5-herramientas-para-mejorar-tu-productividad/',
         },
     ];
 
