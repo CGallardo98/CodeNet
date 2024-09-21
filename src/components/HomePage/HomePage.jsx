@@ -3,7 +3,7 @@ import { useState } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import Footer from "../Footer/Footer"; 
+import ImageSection from "./ImageSection";
 import "./HomePage.css";
 
 export default function HomePage({productos}) {
@@ -52,7 +52,7 @@ const [activeButton, setActiveButton] = useState("Todos");
   return (
     
     <>
-
+    <ImageSection />    
     <Slider {...settings}>
       {images.map((image, index) => (
         <div key={index} className="carousel-item">
