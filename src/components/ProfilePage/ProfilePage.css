@@ -4,7 +4,7 @@
 }
 
 .profile-card {
-    border: 1px solid #000000;
+    border: 0px solid #000000;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
@@ -42,7 +42,7 @@
 .user-posts {
     display: flex;
     flex-wrap:inherit;
-    
+    margin-top: 20px;
     justify-content: flex-start; /* Centra los tabs horizontalmente */
     width: 1280px;
     /*cursor: pointer; /* Cambia el cursor al pasar el ratón */
