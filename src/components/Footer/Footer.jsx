@@ -6,6 +6,11 @@ import SubscribeForm from "./SubscribeForm";
 function Footer() {
   const navigate = useNavigate();
 
+  // Función para navegar a la página de categoría
+  const navigateToCategory = (category) => {
+    navigate(`/category/${category}`);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-section">
@@ -23,10 +28,10 @@ function Footer() {
 
       <div className="footer-section">
         <h3>Categorías</h3>
-        <button>Programación</button>
-        <button>FrontEnd</button>
-        <button>BackEnd</button>
-        <button>FullStack</button>
+        <button onClick={() => navigateToCategory("Git")}>Git</button>
+        <button onClick={() => navigateToCategory("Desarrollo Web")}>Desarrollo Web</button>
+        <button onClick={() => navigateToCategory("Front Stack")}>Front Stack</button>
+        <button onClick={() => navigateToCategory("FullStack")}>FullStack</button>
       </div>
 
       <SubscribeForm />

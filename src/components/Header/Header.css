@@ -9,20 +9,20 @@
 
 .logo {
   display: flex;
-  align-items: center; /* Alinea la imagen y el texto verticalmente */
+  align-items: center; 
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo-image {
   background-color: #f1f1f1;
-  width: 40px; /* Ajusta el tamaño de la imagen */
-  height: auto; /* Mantiene las proporciones de la imagen */
-  margin-right: 10px; /* Espacio entre la imagen y el texto */
+  width: 40px; 
+  height: auto; 
+  margin-right: 10px; 
 }
 
 .logo-text {
   display: flex;
-  flex-direction: column; /* Hace que el texto se apile verticalmente */
+  flex-direction: column; 
   
 }
 
@@ -48,6 +48,18 @@
   padding: 5px;
 }
 
+.search-button {
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 20px; 
+  padding: 0 10px;
+}
+
+.search-button:hover {
+  color: #007BFF; /* Cambia el color de la lupa al pasar el ratón */
+}
+
 .language-switcher button {
   background-color: transparent;
   border: none;
@@ -66,12 +78,12 @@
   margin-left: 10px;
 }
 .main-title {
-  font-size: 24px; /* Tamaño para "CODENET" */
+  font-size: 24px; 
   font-weight: bold;
 }
 
 .sub-title {
-  font-size: 12px; /* Tamaño para "LEARNING EXCHANGE" */
-  margin-top: -5px; /* Ajusta el espacio entre las dos líneas */
+  font-size: 12px; 
+  margin-top: -5px; 
   letter-spacing: 1px;
 }
