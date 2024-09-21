@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* Alinea la imagen y el texto verticalmente */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-image {
+  background-color: #f1f1f1;
+  width: 40px; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column; /* Hace que el texto se apile verticalmente */
+  
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.language-switcher button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.main-title {
+  font-size: 24px; /* Tamaño para "CODENET" */
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 12px; /* Tamaño para "LEARNING EXCHANGE" */
+  margin-top: -5px; /* Ajusta el espacio entre las dos líneas */
+  letter-spacing: 1px;
+}
