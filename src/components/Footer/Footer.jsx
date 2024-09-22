@@ -12,7 +12,8 @@ function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <div className="">
+      <footer className="footer">
       <div className="footer-section">
         <h3>Nosotros</h3>
         <p>Somos un grupo de desarrolladores</p>
@@ -49,6 +50,7 @@ function Footer() {
         </p>
       </div>
     </footer>
+    </div>
   );
 }
 

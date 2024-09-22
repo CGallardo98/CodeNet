@@ -2,7 +2,7 @@ import React from 'react';
 import './ProfilePage.css';
 import UserPostCard from './UserPostCard';
 
-const ProfilePage = () => {
+const ProfilePage = ({ searchQuery }) => {
     const user = {
         profilePicture: 'https://i.postimg.cc/ZKpWrBN2/moure.jpg', 
         name: 'MoureDev',
@@ -90,6 +90,12 @@ const ProfilePage = () => {
     
     ];
 
+    //Implementación de la búsqueda
+    const displayedEntries = posts.filter(entry => { ///// --->> filta la búsqueda sobre el filtro de tab existente
+        return (entry.title.toLowerCase().includes(searchQuery.toLowerCase())//Retorna títulos que correspondan con la búsqueda
+        );
+    })
+
     return (
         <div className="profile-page">
             {/* Sección de perfil descriptivo */}
@@ -115,7 +121,7 @@ const ProfilePage = () => {
             {/* Sección de publicaciones */}
             <h2>Publicaciones</h2>
             <div className="user-posts">
-                {posts.map(post => (
+                {displayedEntries.map(post => (
                     <UserPostCard key={post.id} post={post} />
                 ))}
             </div>

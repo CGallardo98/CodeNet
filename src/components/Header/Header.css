@@ -1,10 +1,18 @@
+
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
   background-color: #f1f1f1;
   font-family: Arial, Helvetica, sans-serif;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+.codenet-logo {
+  width: 13rem;
+  padding: 0.5rem;
 }
 
 .logo {
@@ -28,7 +36,8 @@
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 10%;
+  margin: 0 9rem;
 }
 
 .nav-links a {
@@ -36,6 +45,10 @@
   color: black;
   display: flex;
   align-items: center;
+}
+
+.nav-icon {
+  margin-right: 0.3rem;
 }
 
 .search-bar {
@@ -75,7 +88,7 @@
   width: 30px;
   height: 20px;
   cursor: pointer;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 .main-title {
   font-size: 24px; 
@@ -86,4 +99,48 @@
   font-size: 12px; 
   margin-top: -5px; 
   letter-spacing: 1px;
+}
+
+
+
+/* Styling for the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0; /* A lighter grey than before */
+  border-radius: 10px; /* Less rounded corners */
+  padding: 5px 8px;
+  width: 166px; /* Adjusted width */
+  height: 36px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Optional: slight shadow */
+}
+
+/* Styling for the search input */
+.search-input {
+  border: none;
+  background-color: transparent;
+  padding: 6px;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  color: #333; /* Darker text */
+  text-align: left;
+}
+
+/* Styling for the search button (magnifying glass) */
+.search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure button spans the height of the container */
+  padding: 0;
+  margin: 0;
+}
+
+.search-button img {
+  width: 16px; /* Smaller size for better vertical centering */
+  height: 16px;
 }
