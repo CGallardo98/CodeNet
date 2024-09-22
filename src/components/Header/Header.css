@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-image {
+  background-color: #f1f1f1;
+  width: 40px; 
+  height: auto; 
+  margin-right: 10px; 
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column; 
+  
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.search-button {
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 20px; 
+  padding: 0 10px;
+}
+
+.search-button:hover {
+  color: #007BFF; /* Cambia el color de la lupa al pasar el ratón */
+}
+
+.language-switcher button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.flag-icon {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.main-title {
+  font-size: 24px; 
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 12px; 
+  margin-top: -5px; 
+  letter-spacing: 1px;
+}

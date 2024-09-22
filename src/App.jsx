@@ -6,7 +6,9 @@ import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
 import ProjectFormPage from './components/ProjectFormPage/ProjectFormPage';
+import Header from './components/Header/Header'; // Importa el Footer
 import Footer from './components/Footer/Footer'; // Importa el Footer
+import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -81,11 +83,13 @@ const App = () => {
 
   return (
     <>
+    <Header /> {/* El Header presente en todas las páginas */}
     <Routes>
       <Route path='/' element={ <HomePage productos={blogEntries}/> }/>
       <Route path='/profile' element={ <ProfilePage/> }/>
       <Route path='/entry/:id' element={ <ProjectPage blogEntries={blogEntries}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
+      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}
     </>

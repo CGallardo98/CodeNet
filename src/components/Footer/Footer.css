@@ -54,6 +54,11 @@
   background-color: #272727;
 }
 
+footer .footer-section p {
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
 /* La parte inferior del footer */
 .footer-bottom {
   text-align: center;
