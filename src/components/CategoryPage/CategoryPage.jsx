@@ -11,7 +11,7 @@ const CategoryPage = ({ productos }) => {
     if (categoria) {
       // Filtrar los productos según la categoría
       const filtrados = productos.filter(
-        (producto) => producto.categoria.toLowerCase() === categoria.toLowerCase()
+        (producto) => producto.category.toLowerCase() === categoria.toLowerCase()
       );
       setProductosFiltrados(filtrados);
     }
@@ -26,7 +26,7 @@ const CategoryPage = ({ productos }) => {
             <ProductCard key={producto.id} producto={producto} />
           ))
         ) : (
-          <p>No hay productos disponibles en esta categoría.</p>
+          <p>No hay publicaciones disponibles en esta categoría.</p>
         )}
       </div>
     </div>
