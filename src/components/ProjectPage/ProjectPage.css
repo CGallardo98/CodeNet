@@ -1,10 +1,11 @@
 .blog-content * {
     margin: 0; /* Reset all margins */
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   .blog-entry-page {
     width: 100%; /* Full width of parent */
-    padding: 0.5rem;
+    padding: 2rem 0.5rem;
     box-sizing: border-box;
     box-shadow: none;
     background-color: #f9f9f9;
@@ -52,9 +53,12 @@
     font-size: 0.9rem;
   }
   
-  .cover-image {
+  .cover-image-entry {
     width: 100%; /* Cover image takes full width */
+    max-width: 100%;
     height: auto;
+    aspect-ratio: 11/4;
+    object-fit: cover;
     margin-bottom: 1rem;
   }
   
@@ -62,3 +66,60 @@
     width: 100%;
   }
   
+  .entry-content {
+    font-family: Arial, Helvetica, sans-serif; /* Match the font family */
+    font-size: medium; /* Match the font size */
+    font-weight: normal; /* Match the font weight */
+  }
+  .entry-content ul {
+    padding-left: 20px; /* Add some padding for the list */
+    margin: 10px 0; /* Space above and below the list */
+}
+
+.entry-content li {
+    font-family: inherit; /* Inherit font family */
+    font-size: inherit; /* Inherit font size */
+    font-weight: inherit; /* Inherit font weight */
+}
+
+.entry-content hr {
+  border: 0.05rem solid #ccc;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.05rem;
+}
+
+.content-img {
+  width: 40%; /* Cover image takes full width */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+pre {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 10px;            /* Padding inside the box */
+  border: 1px solid #ccc;  /* Light border */
+  border-radius: 4px;      /* Rounded corners */
+  overflow-x: auto;        /* Horizontal scroll for long lines */
+}
+
+code {
+  font-family: monospace;  /* Monospace font for code */
+}
+
+blockquote {
+  border-left: 5px solid #bdbdbd;
+  color: #666;
+  font-size: 0.9em; 
+  font-weight: bold;  
+  margin: 5px auto;
+  padding-left: 5px;
+}
+
+blockquote a {
+  color: inherit;         /* Inherit the text color (grey) */
+  text-decoration: underline; /* Underline the text */
+}

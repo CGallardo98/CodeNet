@@ -23,7 +23,7 @@ const ver = (seccion) => {
     setFiltroproducto([...productos.filter(producto => producto.rating > 5)])
   }
   if (seccion === "Siguiendo") {
-    setFiltroproducto([...productos.filter(producto => producto.autor === 'MoureDev')])
+    setFiltroproducto([...productos.filter(producto => producto.user === 'MoureDev')])
   }
 
   setActiveButton(seccion)

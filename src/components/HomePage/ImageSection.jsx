@@ -14,7 +14,7 @@ const ImageSection = () => {
           <span>CODENET</span>
           <span className="sub-text">LEARNING EXCHANGE</span>
         </div>
-        <Link to="/blog-entry/create">
+        <Link to="/entry/new">
           <button className="create-entry-button">Crea tu entrada</button>
         </Link>
       </div>
