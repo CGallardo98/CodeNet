@@ -31,8 +31,8 @@ function Footer() {
         <h3>Categorías</h3>
         <button onClick={() => navigateToCategory("Git")}>Git</button>
         <button onClick={() => navigateToCategory("Desarrollo Web")}>Desarrollo Web</button>
-        <button onClick={() => navigateToCategory("Front Stack")}>Front Stack</button>
-        <button onClick={() => navigateToCategory("FullStack")}>FullStack</button>
+        <button onClick={() => navigateToCategory("React")}>React</button>
+        <button onClick={() => navigateToCategory("JavaScript")}>JavaScript</button>
       </div>
 
       <SubscribeForm />

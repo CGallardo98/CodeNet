@@ -15,7 +15,7 @@ const ProductCard = ({ producto }) => {
         <h2 className="producto-nombre">{producto.title}</h2>
         <p className="producto-rating">Likes(K): {producto.rating} ★</p>   
         <p className="producto-autor">{decodeURIComponent(producto.autor)}</p>
-        <Link to={"/entry/${producto.autor}/${producto.id}"}>
+        <Link to={`/entry/${producto.autor}/${producto.id}`}>
             <button>Leer más</button>
         </Link>
     </div>
