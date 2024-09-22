@@ -23,7 +23,7 @@ function Footer() {
         <h3>Links</h3>
         <button onClick={() => navigate("/")}>Inicio</button> {/*Boton que manda a Inicio*/}
         <button onClick={() => navigate("/profile")}>Perfil</button> {/*Boton que manda a Perfil*/}
-        <button>Nosotros</button>
+        <button onClick={() => navigate("/nosotros")}>Nosotros</button> {/*Boton que manda a Perfil*/}
       </div>
 
       <div className="footer-section">

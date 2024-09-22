@@ -10,6 +10,8 @@ import Header from './components/Header/Header'; // Importa el Footer
 import Footer from './components/Footer/Footer'; // Importa el Footer
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
+import NosotrosPage from './components/NosotrosPage/NosotrosPage';
+
 
 
 const App = () => {
@@ -75,6 +77,7 @@ const App = () => {
       <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
       <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={productos} />} /> {/* Nueva ruta */}
+      <Route path="/nosotros" element = {<NosotrosPage/>}/>
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}
     </>
