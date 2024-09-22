@@ -86,6 +86,7 @@ button {
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-top: 1rem;
 }
 button:hover {
   opacity: 0.8;
@@ -273,3 +274,16 @@ button:hover {
   display: flex;
   flex-direction: column;
   text-align: left;}
+
+.ql-container {
+  min-height: 50vh;  /* Initial height */
+  max-height: 100vh;  /* Optional max height */
+  overflow-y: auto;   /* Allow vertical scrolling */
+}
+
+/* Style for the actual editor content area */
+.ql-editor {
+  min-height: 50vh;  /* Initial height of the editable area */
+  max-height: 100%;   /* Ensure the content grows properly */
+  overflow-y: auto;   /* Vertical scrolling for overflow content */
+}

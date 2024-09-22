@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: left;
 }
 
 h4 {
@@ -47,16 +48,17 @@ h4 {
 
 .blog-entry-preview {
   border: solid 1px black;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* This makes sure the content grows to fill the popup */
   overflow-y: auto;
   display: flex;
-  align-items: flex-start;
+  
 }
 
 /* Blog content style */
-.blog-content {
+.blog-content-preview {
   width: 100%;  /* Make content take full width */
   margin: 10px auto;
   max-width: 800px; /* Adjust width similar to your actual blog page */
@@ -68,13 +70,57 @@ h4 {
   font-size: medium;
 }
 
-.blog-content * {
+.blog-content-preview * {
   margin: 5px auto; /* Reset all margins */
+
 }
 
 /* Previewed cover image */
 .cover-img-preview {
+  width: 100%;
+}
+
+.author-info-preview {
+
+  display: inline-flex;
+  align-items: center;
+  width: auto;
   max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+  text-align: left;
+  /* Remove justify-content */
+}
+
+.author-img-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 10px;
+}
+
+.author-name-preview {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.blog-date-preview {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.author-img-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 10px;
+}
+
+.author-name-preview {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.blog-date-preview {
+  color: gray;
+  font-size: 0.9rem;
+  margin-left: auto; /* Optional if you want date to float right */
 }
