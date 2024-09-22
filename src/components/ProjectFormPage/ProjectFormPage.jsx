@@ -1,48 +1,58 @@
+
+import React, { useEffect, useState } from 'react';
 import './ProjectFormPage.css';
 import '../../index.css';
-import { useState } from "react";
 import CreatableSelect from 'react-select/creatable';
 import JSZip from 'jszip';
+import ReactQuill, { Quill } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import ImgUploadBox from './ImgUploadBox';
 import PreviewPopup from './PreviewPopup';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function ProjectFormPage() {
 
-  const nav = useNavigate();
+export default function ProjectFormPage({ addBlogEntry }) {
 
-  const [coverImg, setCoverImg] = useState('')
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [sourceFile, setSourceFile] = useState(null);
-  const [githubLink, setGithubLink] = useState('');
-  const [category, setCategory] = useState(null);
+  const navigate = useNavigate();
+
+  const [newEntry, setNewEntry] = useState({
+    title: '',
+    coverImg: '',
+    category: null,
+    author: 'Grupo 14 Bootcamp de Programación Talento Tech Oriente',
+    content: '',
+    sourceFile: null,
+    githubLink: '',
+    date: null,
+  })
+
   const [isFocused, setIsFocused] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
   const initialCategories = [
+    { value: 'React', label: 'React' },
     { value: 'Git', label: 'Git' },
+    { value: 'Javascript', label: 'Javascript' },
+    { value: 'HTML', label: 'HTML' },
     { value: 'Desarrollo Web', label: 'Desarrollo Web' },
-    { value: 'Front Stack', label: 'Front Stack' },
-    { value: 'Full Stack', label: 'Full Stack' }];
-
+    { value: 'Frontend', label: 'Frontend' },
+    { value: 'Backend', label: 'Backend' },
+    { value: 'Full Stack', label: 'Full Stack' },
+    { value: 'Python', label: 'Python' },
+  ];
   const [categories, setCategories] = useState(initialCategories);
-  const post = { coverImg, title, content, category, sourceFile, githubLink };
 
   //Función para añadir nuevas categorías
   const handleAddCategory = (newCategory) => {
     const newOption = { value: newCategory, label: newCategory };
-    //Añade nueva categoría a las opciones
     setCategories((prev) => [...prev, newOption]); 
-    //Selecciona la nueva categoría
-    setCategory(newOption.value);
+    setNewEntry({...newEntry, category: newOption.value})
   };
 
   //Función para manejar el archivo zip de código fuente
   const handleZipUpload = async (e) => {
     const zipFile = e.target.files[0];
     const zip = new JSZip();
-  
     if (zipFile) {
       try {
         const zipContent = await zip.loadAsync(zipFile);
@@ -51,39 +61,45 @@ export default function ProjectFormPage() {
           console.log("File in zip:", relativePath);
         });
         //Guarda el archivo leído
-        setSourceFile(zipFile);
+        setNewEntry({...newEntry, sourceFile: zipFile})
       } catch (error) {
         console.error("Error reading zip file:", error);
       }
     }
   };
 
-  const cancelPost = () => {
-    alert("Estás seguro que deseas cancelar la publicación? Tu contenido se eliminará.")
-    return nav('/');
-  }
+  //Implementación de la barra de herramientas del editor de texto
+  const quillModules = {
+    toolbar: [
+      [{ 'font': [] }, { 'size': ['small', false, 'large', 'huge'] }],
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline'],
+      ['link', 'image', 'code-block'], 
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub' }, { 'script': 'super' }],
+      [{ 'indent': '-1' }, { 'indent': '+1' }],
+      [{ 'align': [] }],
+    ],
+  };
 
-  const handlePreview = (e) => {
+  const closePreview = () => {
+    setShowPreview(false);
+  }
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Valida que estén llenos los campos
-    if (!coverImg || !title || !content || !category) {
+    if (!newEntry.coverImg || !newEntry.title || !newEntry.content || !newEntry.category) {
       alert("Por favor, completa todos los campos obligatorios antes de enviar.");
       return;
     }
-    // Set the post object and show the preview pop-up
-    setShowPreview(true);  // This triggers the popup to be shown
-  };
-  const closePreview = () => {
-    setShowPreview(false);  // This hides the popup
-  };
+    addBlogEntry(newEntry);
+  }
 
   return (
     <div>
-      <form onSubmit={handlePreview} className='blog-entry-form'>
+      <form onSubmit={handleSubmit} className='blog-entry-form'>
         <h1>Crea una entrada de Blog</h1>
         {/* Componente para agregar imagen de portada */}
-        <ImgUploadBox onImgSelect={(file) => setCoverImg(file)}/>
+        <ImgUploadBox onImgSelect={(file) => setNewEntry({...newEntry, coverImg: file})}/>
 
         <div className='columns'>
           <div className='left-column'>
@@ -92,16 +108,15 @@ export default function ProjectFormPage() {
               className='input title-input'
               type='text' 
               placeholder='Título'
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={newEntry.title}
+              onChange={(e) => setNewEntry({...newEntry, title: e.target.value})}
             />
 
-            {/* Textarea para el contenido*/}
-            <textarea 
-              className='input content-input'
-              placeholder='Escribe aquí el contenido de tu entrada'
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+            {/* Componente rich text editor para el contenido */}
+            <ReactQuill 
+              value={newEntry.content} 
+              onChange={(value) => setNewEntry({...newEntry, content: value})}
+              modules={quillModules}
             />
 
             {/* Botones para Publicar y Cancelar */}
@@ -109,12 +124,13 @@ export default function ProjectFormPage() {
               <button
                 type="button" 
                 className='cancel-btn' 
-                onClick={cancelPost}>
+                onClick={() => navigate('/')}>
                   Cancelar
               </button>
               <button 
                 type="button"
-                className='preview-btn'>
+                className='preview-btn'
+                onClick={() => setShowPreview(true)}>
                   Vista previa
               </button>
               <button
@@ -133,11 +149,11 @@ export default function ProjectFormPage() {
                 <img className="text-icon"
                 src='/icons/code-icon.png'/>
               </div>
-              {sourceFile ? (
+              {newEntry.sourceFile ? (
                 <>
                   {/* Muestra el nombre del archivo seleccionado: */}
                   <div className='file-upload-text uploaded'>
-                    Archivo cargado: {sourceFile.name}
+                    Archivo cargado: {newEntry.sourceFile.name}
                     <button className='change-btn' 
                       onClick={() => document.getElementById('file-uploads').click()}>
                       Cambiar
@@ -183,8 +199,8 @@ export default function ProjectFormPage() {
               <input className='link-box'
                 type="url"
                 placeholder="https://github.com/username/repo_name.git"
-                value={githubLink}
-                onChange={(e) => setGithubLink(e.target.value)}
+                value={newEntry.githubLink}
+                onChange={(e) => setNewEntry({...newEntry, githubLink: e.target.value})}
               />
             </div>
 
@@ -194,10 +210,10 @@ export default function ProjectFormPage() {
                 Elige la categoría
               </label>
               <CreatableSelect className='dropdown'
-                onChange={(option) => setCategory(option.value)}
+                onChange= {(option) => setNewEntry({...newEntry, category: option.value})}
                 onCreateOption={handleAddCategory}
                 options={categories}
-                value={category ? { value: category, label: category } : null}
+                value={newEntry.category ? { value: newEntry.category, label: newEntry.category } : null}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 placeholder={isFocused ? 'Crea una categoría' : 'Categoría'}
@@ -208,9 +224,9 @@ export default function ProjectFormPage() {
       </form>
       {/* Show the PreviewPopup if showPreview is true */}
       <PreviewPopup 
-        show={showPreview}  // Pass the show prop
-        post={post}
-        closePreview={closePreview} 
+        showPreview={showPreview}  // Pass the show prop
+        entry={newEntry}
+        closePreview={closePreview}
       />
     </div>
   );
