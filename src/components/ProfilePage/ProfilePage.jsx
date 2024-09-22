@@ -19,6 +19,7 @@ const ProfilePage = () => {
             content: 'Git y GitHub son dos herramientas fundamentales en el mundo del desarrollo de software. Este es un curso desde cero creado para aprender a trabajar con ellas y así mejorar como programadores.',
             image: 'https://i.postimg.cc/VsHNSGdF/Git0.png',
             enlace: 'https://github.com/mouredev/hello-git/',
+            autor: 'MoureDev',
         },
         {
             id: 2,

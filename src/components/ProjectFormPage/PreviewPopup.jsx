@@ -24,15 +24,14 @@ export default function PreviewPopup({ showPreview, entry, closePreview }) {
             <h1 className="blog-title">{entry.title}</h1>
 
             <div className="author-info-preview">
-
-                <img className="author-img-preview"
-                  src="/mouredev.png"
-                  alt={entry.author || 'Author'} 
-                />
-                <span className="author-name-preview">{entry.author}</span> 
-                <span className="blog-date-preview">
-                  {new Date().toLocaleDateString()}
-                </span>
+              <img className="author-img-preview"
+                src="https://i.ibb.co/wggkRsK/image-Photoroom.png"
+                alt={entry.author || 'Author'} 
+              />
+              <span className="author-name-preview">{entry.author}</span> 
+              <span className="blog-date-preview">
+                {new Date().toLocaleDateString()}
+              </span>
             </div>  
 
             <img className="cover-img-preview"
