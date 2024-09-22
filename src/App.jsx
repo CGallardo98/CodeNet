@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css'
-import ProductCard from './components/ProductCard/ProductCard';
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import './App.css'
 import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
@@ -10,10 +10,12 @@ import Header from './components/Header/Header'; // Importa el Footer
 import Footer from './components/Footer/Footer'; // Importa el Footer
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 const App = () => {
-  const productos = [
+  const navigate = useNavigate();
+  const [blogEntries, setBlogEntries] = useState([
     {
         id: 1,
         categoria: 'React',
@@ -61,20 +63,33 @@ const App = () => {
       nombre: 'Programación en Python | Lenguaje de Programación ',
       rating: 13,
       autor: 'ATS',
-   
+      content: 'mmasdhkfhs',
     },
+  ]);
 
-];
+  const addBlogEntry = (newEntry) => {
+    const newId = blogEntries.length + 1; //Genera nuevo id
+    const imgUrl =  URL.createObjectURL(newEntry.coverImg); //Crea url de la foto de portada
+    const newDate = new Date().toLocaleDateString(); //Nueva fecha
+    const updatedEntry = { ...newEntry, id: newId, coverImg: imgUrl, date: newDate };
+    
+    setBlogEntries((prevEntries) => {
+        const updatedEntries = [...prevEntries, updatedEntry];
+        navigate(`/entry/${newId}`); // Lleva a la página de entrada de blog
+        return updatedEntries;
+    });
+    console.log('newEntry: ', updatedEntry);
+  };
 
   return (
     <>
     <Header /> {/* El Header presente en todas las páginas */}
     <Routes>
-      <Route path='/' element={ <HomePage productos={productos}/> }/>
+      <Route path='/' element={ <HomePage productos={blogEntries}/> }/>
       <Route path='/profile' element={ <ProfilePage/> }/>
-      <Route path='/blog-entry/id' element={ <ProjectPage/> }/>
-      <Route path='/blog-entry/create' element={ <ProjectFormPage/> }/>
-      <Route path="/category/:categoria" element={<CategoryPage productos={productos} />} /> {/* Nueva ruta */}
+      <Route path='/entry/:id' element={ <ProjectPage blogEntries={blogEntries}/> }/>
+      <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
+      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}
     </>
