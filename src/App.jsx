@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer'; // Importa el Footer
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import NosotrosPage from './components/NosotrosPage/NosotrosPage';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const App = () => {
@@ -171,12 +171,15 @@ const App = () => {
     });
   };
 
+  const [searchQuery, setSearchQuery] = useState('');
+
+
   return (
     <>
-    <Header /> {/* El Header presente en todas las páginas */}
+    <Header setSearchQuery={setSearchQuery}/> {/* El Header presente en todas las páginas */}
     <Routes>
-      <Route path='/' element={ <HomePage productos={blogEntries}/> }/>
-      <Route path='/profile' element={ <ProfilePage/> }/>
+      <Route path='/' element={ <HomePage productos={blogEntries} searchQuery={searchQuery}/> }/>
+      <Route path='/profile' element={ <ProfilePage searchQuery={searchQuery}/> }/>
       <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={blogEntries}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
