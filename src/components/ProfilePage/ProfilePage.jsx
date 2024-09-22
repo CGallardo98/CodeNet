@@ -24,7 +24,7 @@ const ProfilePage = ({ searchQuery }) => {
         {
             id: 2,
             title: 'Curso para Aprender Python',
-            content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base.',
+            content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base y lograr el desarrollo de aplicaciones.',
             image: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
             enlace: 'https://github.com/mouredev/Hello-Python/',
         },
@@ -49,8 +49,8 @@ const ProfilePage = ({ searchQuery }) => {
       {
           id: 2,
           categoria: 'Git',
-          imagen: 'https://i.postimg.cc/FzHx2wqL/Disen-o-sin-ti-tulo-12.png',
-          nombre: 'Curso Completo para Aprender a Trabajar con Git & GitHub',
+          imagen: 'https://i.postimg.cc/qvvkjG47/Git8.png',
+          nombre: 'Curso para Aprender a Trabajar con Git & GitHub',
           rating: 8.6,
           autor: 'MoureDev',
       },
