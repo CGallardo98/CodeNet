@@ -24,7 +24,7 @@ const ProfilePage = ({ searchQuery }) => {
         {
             id: 2,
             title: 'Curso para Aprender Python',
-            content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base y lograr el desarrollo de aplicaciones.',
+            content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base hasta lo más avanzado.',
             image: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
             enlace: 'https://github.com/mouredev/Hello-Python/',
         },
