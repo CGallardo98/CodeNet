@@ -16,7 +16,7 @@ const miembros = [
         biografia: 'Estudiante de Ingenieria ambiental, el cual el solucionar problemas es una de sus mayores pasiones.',
         github: 'https://github.com/ROrtegaAyala',
         linkedin: 'https://www.linkedin.com/in/rolando-andrey-ortega-ayala-a574a6222/',
-        imagen: 'https://i.postimg.cc/dtv8pqW9/Rolando2.png'
+        imagen: 'https://i.postimg.cc/R0sWsmWX/Rolando2.png'
     },
     {
         nombre: 'Carolina Gallardo',
