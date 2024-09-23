@@ -149,7 +149,7 @@ const App = () => {
       id: 6,
       category: 'Python',
       coverImg: 'https://i.postimg.cc/k54Cj5MN/Disen-o-sin-ti-tulo-18.png',
-      title: 'Programación en Python | Lenguaje ',
+      title: 'Programación en Lenguaje Python',
       rating: 13,
       autor: 'ATS',
       date: '',
