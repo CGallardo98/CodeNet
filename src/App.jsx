@@ -20,7 +20,7 @@ const App = () => {
     {
       id: 1,
       category: 'Git',
-      coverImg: 'https://i.postimg.cc/FzHx2wqL/Disen-o-sin-ti-tulo-12.png',
+      coverImg: 'https://i.postimg.cc/Ls6q358J/Sin-ti-tulo-532-x-437-px.png',
       title: 'Curso para Aprender a Trabajar con Git & GitHub',
       rating: 8.6,
       autor: 'MoureDev',
