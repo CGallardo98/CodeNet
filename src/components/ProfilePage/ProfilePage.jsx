@@ -82,7 +82,7 @@ const ProfilePage = ({ searchQuery }) => {
         id: 6,
         categoria: 'Python',
         imagen: 'https://i.postimg.cc/k54Cj5MN/Disen-o-sin-ti-tulo-18.png',
-        nombre: 'Programación en Python | Lenguaje de Programación ',
+        nombre: 'Programación en Python | Lenguaje ',
         rating: 13,
         autor: 'ATS',
      
