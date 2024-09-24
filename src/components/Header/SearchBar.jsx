@@ -11,6 +11,9 @@ function SearchBar({ setSearchQuery }) {
     if (e.target.value === '') {
       handleClear();  // Limpia la búsqueda cuando el input está vacío
     }
+    else {
+      setSearchActive(false); // Para reactivar el ícono de la lupa
+    }
   }  
 
   // Función para manejar la acción de buscar 
@@ -44,12 +47,13 @@ function SearchBar({ setSearchQuery }) {
         placeholder="Buscar"
         className="search-input"
         value={query} //Asigna el valor local de la búsqueda
-        onChange={handleInputChange}
-        onKeyDown={handleKeyPress} // Detecta el pulso de la tecla enter
+        onChange={handleInputChange} // Función definida arriba
+        onKeyDown={handleKeyPress} // Detecta el pulso de la tecla enter, función definida arriba
       /> 
       <button 
         className="search-button" 
-        onClick={searchActive ? handleClear : handleSearch}>
+        onClick={searchActive ? handleClear : handleSearch}
+      >
         <img 
           src= {searchActive
             ? "https://cdn-icons-png.flaticon.com/128/1828/1828843.png" // ícono de cancelar para eliminar la búsqueda
