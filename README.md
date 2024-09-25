@@ -66,6 +66,31 @@
   npm run dev
   Esto iniciará el servidor de desarrollo de Vite. Abrir el navegador y digitar http://localhost:5173 (o el puerto especificado en la salida de la consola).
 
+<h2>Pruebas y Validación</h2>
+<p>El desarrollo de un blog como CodeNet implica un proceso meticuloso de pruebas y validación para asegurar que cada nuevo cambio se implemente de manera efectiva y sin errores. Utilizar pull requests (PR) en GitHub es una estrategia clave en este proceso, ya que permite revisar y validar cada contribución antes de integrarla al código base.</p>
+
+Proceso de Pull Request
+Cuando un desarrollador desea realizar cambios en el blog, crea un pull request que incluye las modificaciones propuestas. Este PR se convierte en el centro de revisión, donde otros miembros del equipo pueden revisar el código, comentar y sugerir mejoras. Esta colaboración es fundamental para garantizar la calidad del código.
+
+<h3>Pruebas Automatizadas</h3>
+<p>Antes de fusionar un pull request, se ejecutan pruebas automatizadas que verifican el correcto funcionamiento del código nuevo. Estas pruebas pueden incluir:</p>
+<br>* Pruebas Unitarias: Se aseguran de que cada componente individual funcione como se espera.
+* Pruebas de Integración: Verifican que diferentes módulos del blog interactúen correctamente.
+* Pruebas de Interfaz de Usuario: Aseguran que los cambios en el frontend no rompan la experiencia del usuario.</br>
+
+Revisión de Código
+Una vez que se completan las pruebas automatizadas, el equipo realiza una revisión de código detallada. Esto incluye:
+
+Verificación de Estilo de Código: Asegurarse de que el código siga las pautas de estilo establecidas.
+Análisis de Seguridad: Evaluar el código para detectar posibles vulnerabilidades.
+Comprobación de Rendimiento: Asegurarse de que los cambios no afecten negativamente el rendimiento del blog.
+
+<h3>Validación Final</h3>
+Si el pull request pasa todas las pruebas y recibe la aprobación de los revisores, se procede a su fusión en la rama principal. Este proceso de validación es esencial para mantener la integridad y la calidad del blog CodeNet, asegurando que cada actualización mejore la plataforma sin introducir nuevos errores.
+
+<h3>Conclusión</h3>
+El uso de pull requests en GitHub para las pruebas y validación del blog CodeNet no solo mejora la calidad del código, sino que también fomenta la colaboración y la transparencia entre los desarrolladores. Gracias a este enfoque, CodeNet puede evolucionar de manera eficiente, ofreciendo siempre la mejor experiencia a sus usuarios.
+
 <h2>Estructura del Proyecto</h2>
 
 * public/: Contiene activos estáticos
