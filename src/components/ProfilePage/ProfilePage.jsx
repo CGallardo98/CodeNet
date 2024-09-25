@@ -27,6 +27,7 @@ const ProfilePage = ({ searchQuery }) => {
             content: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base hasta lo más avanzado.',
             image: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
             enlace: 'https://github.com/mouredev/Hello-Python/',
+            autor: 'MoureDev'
         },
         {
             id: 3,
@@ -34,60 +35,8 @@ const ProfilePage = ({ searchQuery }) => {
             content: 'Curso completo de 7 horas para aprender los fundamentos del lenguaje SQL y bases de datos relacionales. Más de 80 lecciones y 50 comandos desde cero. Con MySQL y PostgreSQL.',
             image: 'https://i.postimg.cc/QN6FQNn1/SQL0.png',
             enlace: 'https://github.com/mouredev/hello-sql/',
+            autor: 'MoureDev'
         },
-    ];
-
-    const perfil = [
-      {
-          id: 1,
-          categoria: 'React',
-          imagen: 'https://i.postimg.cc/wvmzDbFD/react.png',
-          nombre: 'Curso Completo de React 🚀 + Actividades Prácticas Incluídas',
-          rating: 2.3,
-          autor: 'JAB',
-      },
-      {
-          id: 2,
-          categoria: 'Git',
-          imagen: 'https://i.postimg.cc/qvvkjG47/Git8.png',
-          nombre: 'Curso para Aprender a Trabajar con Git & GitHub',
-          rating: 8.6,
-          autor: 'MoureDev',
-      },
-      {
-          id: 3,
-          categoria: 'JavaScript',
-          imagen: 'https://i.postimg.cc/XN1KrHms/Disen-o-sin-ti-tulo-13.png',
-          nombre: '100 Proyectos de JavaScript con Código y Vídeos',
-          rating: 2.1,
-          autor: 'MiduDev',
-      },
-      {
-        id: 4,
-        categoria: 'HTML',
-        imagen: 'https://i.postimg.cc/gcLy6qpd/Disen-o-sin-ti-tulo-14.png',
-        nombre: 'Aprende HTML Ahora! Curso Completo Gratis desde Cero',
-        rating: 2.4,
-        autor: 'Hola Mundo Dev',
-      },
-      {
-        id: 5,
-        categoria: 'Desarrollo Web',
-        imagen: 'https://i.postimg.cc/GmdvNWyh/Disen-o-sin-ti-tulo-15.png',
-        nombre: 'Cómo Estudiar Desarrollo Web en 2023 : 👩‍💻 Guía Completa  🚀',
-        rating: 14,
-        autor: 'Míriam González',
-      },
-      {
-        id: 6,
-        categoria: 'Python',
-        imagen: 'https://i.postimg.cc/k54Cj5MN/Disen-o-sin-ti-tulo-18.png',
-        nombre: 'Programación en Python | Lenguaje ',
-        rating: 13,
-        autor: 'ATS',
-     
-      },
-    
     ];
 
     //Implementación de la búsqueda

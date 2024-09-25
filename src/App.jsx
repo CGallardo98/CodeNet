@@ -162,7 +162,7 @@ const App = () => {
     const imgUrl =  URL.createObjectURL(newEntry.coverImg); //Crea url de la foto de portada
     const newDate = new Date().toLocaleDateString(); //Nueva fecha
     const encodedAutor = encodeURIComponent(newEntry.autor)
-    const updatedEntry = { ...newEntry, id: newId, coverImg: imgUrl, date: newDate, autor: encodedAutor };
+    const updatedEntry = { ...newEntry, id: newId, coverImg: imgUrl, date: newDate };
     
     setBlogEntries((prevEntries) => {
         const updatedEntries = [...prevEntries, updatedEntry];

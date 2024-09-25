@@ -6,7 +6,7 @@ export default function ProjectPage({ blogEntries }) {
   const {id, autor} = useParams();
 
   // Decodifica el nombre del autor
-  const entry = blogEntries.find((entry) => entry.id === parseInt(id) && entry.autor === encodeURIComponent(autor));
+  const entry = blogEntries.find((entry) => entry.id === parseInt(id) && entry.autor === autor);
   if (!entry) {
     return <div> Esta publicación no existe! </div>;
   };
