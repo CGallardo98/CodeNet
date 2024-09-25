@@ -14,7 +14,7 @@ const UserPostCard = ({ post }) => {
     return (
         <div className="user-post-card">
             <img 
-                src={post.image} 
+                src={post.coverImg} 
                 alt={post.title} 
                 className="post-image"
             />
