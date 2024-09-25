@@ -46,3 +46,33 @@
 * Terminal
 * Web Browser
 
+<h2>Requisitos Previos</h2>
+<p>Antes de comenzar, se debe instalados las siguientes herramientas:</p>
+
+* Node.js (se recomienda la versión 14.x o posterior)
+* npm (generalmente viene con Node.js)
+* Git
+* Visual Studio Code (IDE recomendado)
+
+<h2>Instalación</h2>
+<p>Antes de comenzar, se debe instalados las siguientes herramientas:</p>
+
+1. Clonar el repositorio
+   git clone https://github.com/tu-usuario/codenet.git
+   cd codenet
+2. Instalar las dependencias
+   npm install
+3. Ejecutar el proyecto
+  npm run dev
+  Esto iniciará el servidor de desarrollo de Vite. Abrir el navegador y digitar http://localhost:5173 (o el puerto especificado en la salida de la consola).
+
+<h2>Estructura del Proyecto</h2>
+
+* public/: Contiene activos estáticos
+* src/: Código fuente
+* components/: Componentes de React
+* assets/: Activos adicionales utilizados en la aplicación
+* App.jsx: Componente principal de la aplicación
+* main.jsx: Punto de entrada de la aplicación
+* index.html: Plantilla HTML
+
