@@ -12,6 +12,7 @@ import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import NosotrosPage from './components/NosotrosPage/NosotrosPage';
 import { useNavigate } from 'react-router-dom';
+import { posts } from './components/ProfilePage/ProfilePage';
 
 
 const App = () => {
@@ -180,7 +181,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={ <HomePage productos={blogEntries} searchQuery={searchQuery}/> }/>
       <Route path='/profile' element={ <ProfilePage searchQuery={searchQuery}/> }/>
-      <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={blogEntries}/> }/>
+      <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={[...blogEntries, ...posts]}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
       <Route path="/nosotros" element = {<NosotrosPage/>}/>
