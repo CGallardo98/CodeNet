@@ -1,6 +1,8 @@
 <h1><a align="left"><a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/FzmxdmM8/CodeNet.png' border='0' alt='CodeNet' width ="200"/></a> </a>
 <a align="center"> CodeNet</a><img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="80"></h1>
 <h2>Bienvenido a Nuestro Proyecto</h2>
+  <p>Este proyecto consiste en desarrollar una plataforma de blog enfocada en la publicación de proyectos personales, proporcionando un espacio donde los usuarios puedan compartir y documentar sus trabajos de manera estructurada. Igualmente, existirá una interacción entre los usuarios de la plataforma. </p>
+
   <h3><p>Colaboradores. </p></h3>
   <p>Queremos agradecer a las siguientes personas por su colaboración en este proyecto:  
   <li><a href="https://github.com/CGallardo98"> @CGallardo98</a></li> 
