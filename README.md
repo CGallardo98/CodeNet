@@ -3,6 +3,14 @@
 <h2>Bienvenido a Nuestro Proyecto</h2>
   <p>Este proyecto consiste en desarrollar una plataforma de blog enfocada en la publicación de proyectos personales, proporcionando un espacio donde los usuarios puedan compartir y documentar sus trabajos de manera estructurada. Igualmente, existirá una interacción entre los usuarios de la plataforma. </p>
 
+<h3><p>Descripción del Proyecto </p></h3>
+<p>Desarrollar una plataforma de blog enfocada en la publicación de proyectos personales, proporcionando un espacio donde los usuarios puedan compartir y documentar sus trabajos de manera estructurada. 
+Igualmente, existirá una interacción entre los usuarios de la plataforma. </p>
+
+<h3><p>Diseño del Proyecto </p></h3>
+<a href ="https://www.figma.com/design/8fSSCLJeju1sMYYKi4HPKb/CodeNet?embed-host=share&kind=file&node-id=0-1&page-selector=1&theme=light&version=2&viewer=1">Figma</a>
+<img src="https://i.postimg.cc/kgr4Xcv0/Captura-de-pantalla-2024-09-27-a-la-s-12-06-18-p-m.png"/>
+
   <h3><p>Colaboradores. </p></h3>
   <p>Queremos agradecer a las siguientes personas por su colaboración en este proyecto:  
   <li><a href="https://github.com/CGallardo98"> @CGallardo98</a></li> 
