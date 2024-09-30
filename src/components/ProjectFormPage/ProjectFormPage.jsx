@@ -223,9 +223,8 @@ export default function ProjectFormPage({ addBlogEntry }) {
           </div>
         </div>
       </form>
-      {/* Show the PreviewPopup if showPreview is true */}
       <PreviewPopup 
-        showPreview={showPreview}  // Pass the show prop
+        showPreview={showPreview}
         entry={newEntry}
         closePreview={closePreview}
       />

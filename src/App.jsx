@@ -12,11 +12,12 @@ import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import NosotrosPage from './components/NosotrosPage/NosotrosPage';
 import { useNavigate } from 'react-router-dom';
-import { posts } from './components/ProfilePage/ProfilePage';
+import { users, posts } from './components/ProfilePage/ProfilePage';
 
 
 const App = () => {
   const navigate = useNavigate();
+  const currentUser = users[0]; //Simula que el usuario actual es el primero en la lista
   const [blogEntries, setBlogEntries] = useState([
     {
       id: 1,
@@ -177,10 +178,10 @@ const App = () => {
 
   return (
     <>
-    <Header setSearchQuery={setSearchQuery}/> {/* El Header presente en todas las páginas */}
+    <Header setSearchQuery={setSearchQuery} user={currentUser}/> {/* El Header presente en todas las páginas */}
     <Routes>
       <Route path='/' element={ <HomePage productos={blogEntries} searchQuery={searchQuery}/> }/>
-      <Route path='/profile' element={ <ProfilePage searchQuery={searchQuery}/> }/>
+      <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} currentUser={currentUser}/> }/>
       <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={[...blogEntries, ...posts]}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}

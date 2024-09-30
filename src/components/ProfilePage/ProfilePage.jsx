@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProfilePage.css';
 import UserPostCard from './UserPostCard';
+import { useParams } from 'react-router-dom';
+
+export const users = [
+    {
+        id: 1,
+        email: 'mouredev@hotmail.com',
+        password: '1234',
+        username: 'mouredev',
+        name: 'MoureDev',
+        bio: 'Soy ingeniero de software desde hace más de 14 años. Actualmente trabajo como freelance full-stack y creo contenido formativo sobre programación y tecnología en redes.',
+        profilePicture: 'https://i.postimg.cc/ZKpWrBN2/moure.jpg', 
+        memberSince: '2023-01-01',
+        redes: 'https://www.youtube.com/@mouredev',
+    },
+];
+
 
 export const posts = [
     {
@@ -29,15 +45,23 @@ export const posts = [
     },
 ];
 
-const ProfilePage = ({ searchQuery }) => {
-    const user = {
-        profilePicture: 'https://i.postimg.cc/ZKpWrBN2/moure.jpg', 
-        name: 'MoureDev',
-        email: 'Hola 👋🏼 Mi nombre es Brais Moure',
-        bio: 'Soy ingeniero de software desde hace más de 14 años. Actualmente trabajo como freelance full-stack y creo contenido formativo sobre programación y tecnología en redes. ',
-        joinedDate: 'Enero 2023',
-        redes: 'https://www.youtube.com/@mouredev',
-    };
+const ProfilePage = ({ searchQuery, currentUser }) => {
+    const { username } = useParams();
+    const [user, setUser] = useState(null) //estado para el usuario del cual se muestra el perfil
+
+    useEffect(() => {
+        // Establece si se muestra el perfil del usuario actual o de otro usuario
+        if (username === currentUser.username) {
+            setUser(currentUser);
+        } else {
+            const foundUser = users.find((user) => user.username === username);
+            setUser(foundUser);
+        }
+    }, [username, currentUser]);
+
+    if (!user) {
+        return <div> Este perfil no existe! </div>;
+    }
 
     //Implementación de la búsqueda
     const displayedEntries = posts.filter(entry => { ///// --->> filta la búsqueda sobre el filtro de tab existente
@@ -63,7 +87,7 @@ const ProfilePage = ({ searchQuery }) => {
                 
                 <p className="user-email">{user.email}</p>
                 <p className="user-bio">{user.bio}</p>
-                <p className="user-joined">Miembro desde: {user.joinedDate}</p>
+                <p className="user-joined">Miembro desde: {user.memberSince}</p>
                 <p className="user-redes">{user.redes}</p>
             </div>
 
