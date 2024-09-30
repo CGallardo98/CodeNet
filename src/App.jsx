@@ -12,20 +12,68 @@ import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import NosotrosPage from './components/NosotrosPage/NosotrosPage';
 import { useNavigate } from 'react-router-dom';
-import { users, posts } from './components/ProfilePage/ProfilePage';
 
 
 const App = () => {
   const navigate = useNavigate();
+  const [users, setUsers] = useState([
+    {
+        id: 1,
+        email: 'mouredev@hotmail.com',
+        password: '1234',
+        username: 'mouredev',
+        name: 'MoureDev',
+        bio: 'Soy ingeniero de software desde hace más de 14 años. Actualmente trabajo como freelance full-stack y creo contenido formativo sobre programación y tecnología en redes.',
+        profilePicture: 'https://i.postimg.cc/ZKpWrBN2/moure.jpg', 
+        memberSince: '2023-01-01',
+        redes: 'https://www.youtube.com/@mouredev',
+    },
+    {
+      id: 2,
+      email: 'jab@hotmail.com',
+      password: '1234',
+      username: 'soyjab',
+      name: 'JAB',
+      bio: '',
+      profilePicture: 'https://yt3.googleusercontent.com/s4cUbevAGAhSoDDF5pJHTeSKepSOkdJB2IhnebmuK5nIXz3sRa2FIXZom9sEjtrkYA2zOYHByyQ=s160-c-k-c0x00ffffff-no-rj', 
+      memberSince: '2024-01-01',
+      redes: 'https://www.youtube.com/@soyjab',
+    },
+    {
+      id: 3, 
+      username: 'midudev',
+      name: 'MiduDev',
+      profilePicture: 'https://yt3.googleusercontent.com/wpc2B6nslz9DW_pd-KZjlQ26Ds9DLVom3yeMFy87sIZcfZGe7AXVqlZUvP-ePshI7VXvqiDRpWQ=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 4,
+      username: 'holamundo',
+      name: 'Hola Mundo Dev',
+      profilePicture: 'https://yt3.googleusercontent.com/Z69fhRL9_OaXsDz-XsCUe2sGIqU7G1F5Mwl0PwlBsx_ll13K0nLb47q7_RMen7NHvzMVDgd2=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 5,
+      username: 'miriamgonp',
+      name: 'Míriam González',
+      profilePicture: 'https://yt3.googleusercontent.com/3iTeMFNGrVQUXmYHfnvaR5NhS1C_F-4ckcELaeq2JMH6Ay_UzsDkWdACQTNMFLkIwcLe3VP6sA=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 6,
+      username: 'atsdev',
+      name: 'ATS',
+    },
+]);
   const currentUser = users[0]; //Simula que el usuario actual es el primero en la lista
   const [blogEntries, setBlogEntries] = useState([
     {
       id: 1,
       category: 'Git',
       coverImg: 'https://i.postimg.cc/Ls6q358J/Sin-ti-tulo-532-x-437-px.png',
-      title: 'Curso para Aprender a Trabajar con Git & GitHub',
+      title: 'Curso para Aprender Git & GitHub',
+      description: 'Git y GitHub son dos herramientas fundamentales en el mundo del desarrollo de software. Este es un curso desde cero creado para aprender a trabajar con ellas y así mejorar como programadores.',
+      githubLink: 'https://github.com/mouredev/hello-git/',
       rating: 8.6,
-      autor: 'MoureDev',
+      userId: 1,
       userImg: '/mouredev.png',
       date: '',
       content: `
@@ -112,7 +160,7 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/wvmzDbFD/react.png',
       title: 'Curso de React 🚀 + Actividades Prácticas',
       rating: 2.3,
-      autor: 'JAB',
+      userId: 2,
       userImg: '',
       date: '',
       content: '',
@@ -123,7 +171,7 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/XN1KrHms/Disen-o-sin-ti-tulo-13.png',
       title: '100 Proyectos de JavaScript con Videos',
       rating: 2.1,
-      autor: 'MiduDev',
+      userId: 3,
       date: '',
       content: '',
     },
@@ -133,7 +181,7 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/gcLy6qpd/Disen-o-sin-ti-tulo-14.png',
       title: 'Aprende HTML! Curso Gratis desde Cero',
       rating: 2.4,
-      autor: 'Hola Mundo Dev',
+      userId: 4,
       date: '',
       content: '',
     },
@@ -143,7 +191,7 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/GmdvNWyh/Disen-o-sin-ti-tulo-15.png',
       title: 'Cómo Estudiar Desarrollo Web en 2023 🚀',
       rating: 14,
-      autor: 'Míriam González',
+      userId: 5,
       date: '',
       content: '',
     },
@@ -153,9 +201,31 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/k54Cj5MN/Disen-o-sin-ti-tulo-18.png',
       title: 'Programación en Lenguaje Python',
       rating: 13,
-      autor: 'ATS',
+      userId: 6,
       date: '',
       content: '',
+    },
+    {
+        id: 7,
+        category: 'Python',
+        coverImg: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
+        title: 'Curso para Aprender Python desde cero',
+        description: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base hasta lo más avanzado.',
+        content: '',
+        githubLink: 'https://github.com/mouredev/Hello-Python/',
+        rating: 10,
+        userId: 1,
+    },
+    {
+        id: 8,
+        category: 'SQL',
+        coverImg: 'https://i.postimg.cc/QN6FQNn1/SQL0.png',
+        title: 'Curso para Aprender SQL y BD Relacionales',
+        description: 'Curso completo de 7 horas para aprender los fundamentos del lenguaje SQL y bases de datos relacionales. Más de 80 lecciones y 50 comandos desde cero. Con MySQL y PostgreSQL.',
+        content: '',
+        githubLink: 'https://github.com/mouredev/hello-sql/',
+        rating: 2,
+        userId: 1,
     },
   ]);
 
@@ -180,9 +250,9 @@ const App = () => {
     <>
     <Header setSearchQuery={setSearchQuery} user={currentUser}/> {/* El Header presente en todas las páginas */}
     <Routes>
-      <Route path='/' element={ <HomePage productos={blogEntries} searchQuery={searchQuery}/> }/>
-      <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} currentUser={currentUser}/> }/>
-      <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={[...blogEntries, ...posts]}/> }/>
+      <Route path='/' element={ <HomePage users={users} productos={blogEntries} searchQuery={searchQuery}/> }/>
+      <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} users={users} currentUser={currentUser} blogEntries={blogEntries}/> }/>
+      <Route path='/:username/:id' element={ <ProjectPage blogEntries={blogEntries} users={users}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
       <Route path="/nosotros" element = {<NosotrosPage/>}/>

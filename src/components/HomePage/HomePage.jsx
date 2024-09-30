@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import ImageSection from "./ImageSection";
 import "./HomePage.css";
 
-export default function HomePage({searchQuery, productos}) {
+export default function HomePage({searchQuery, users, productos}) {
 
 //Filtro de productos
 const [filtroproducto, setFiltroproducto] = useState(productos)  
@@ -91,9 +91,12 @@ const [activeButton, setActiveButton] = useState("Todos");
     
 
     <div className="producto-lista">
-      {displayedEntries.map(producto => (
-      <ProductCard key={producto.id} producto={producto} />
-      ))}
+      {displayedEntries.map( (producto) => {
+        const author = users.find((user) => user.id === producto.userId);
+        return(
+          <ProductCard key={producto.id} producto={producto} author={author}/>
+        );
+      })}
     </div>
 
     </>

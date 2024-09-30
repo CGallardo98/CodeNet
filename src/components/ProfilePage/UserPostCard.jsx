@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const UserPostCard = ({ post }) => {
+const UserPostCard = ({ post, author }) => {
 
     const vermas = (e, url) => { 
         e.preventDefault();
@@ -19,8 +19,8 @@ const UserPostCard = ({ post }) => {
                 className="post-image"
             />
             <h3 className="post-title">{post.title}</h3>
-            <p className="post-content">{post.content}</p>
-            <Link to={`/entry/${encodeURIComponent(post.autor)}/${post.id}`}>
+            <p className="post-content">{post.description}</p>
+            <Link to={`/${author.username}/${post.id}`}>
                 <button>Leer Más</button>
             </Link>
 
