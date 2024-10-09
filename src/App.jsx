@@ -62,8 +62,16 @@ const App = () => {
       username: 'atsdev',
       name: 'ATS',
     },
+    {
+      id: 7,
+      username: 'grupo14',
+      name: 'Grupo 14 Talento Tech',
+      bio: 'Somos el Grupo 14 del Bootcamp de Programación Intermedio de Talento Tech. Integrantes: Juliana Ramírez, Rolando Ortega y Carolina Gallardo.',
+      porfilePicture: 'https://i.ibb.co/wggkRsK/image-Photoroom.png',
+      memberSince: '2024-09-20',
+    }
 ]);
-  const currentUser = users[0]; //Simula que el usuario actual es el primero en la lista
+  const currentUser = users[6]; //Simula el usuario que tiene la sesión iniciada
   const [blogEntries, setBlogEntries] = useState([
     {
       id: 1,
@@ -75,7 +83,7 @@ const App = () => {
       rating: 8.6,
       userId: 1,
       userImg: '/mouredev.png',
-      date: '',
+      date: '2023-08-02',
       content: `
         <blockquote>
           <p>Si consideras útil el curso, apóyalo haciendo "★ Star" en el <a href="https://github.com/mouredev/hello-git?tab=readme-ov-file#nuevo-libro-de-git--github-desde-cero-segunda-edición" target="_blank" rel="noopener noreferrer">repositorio</a>. ¡Gracias!</p>
@@ -162,7 +170,7 @@ const App = () => {
       rating: 2.3,
       userId: 2,
       userImg: '',
-      date: '',
+      date: '2023-07-02',
       content: '',
     },
     {
@@ -172,7 +180,7 @@ const App = () => {
       title: '100 Proyectos de JavaScript con Videos',
       rating: 2.1,
       userId: 3,
-      date: '',
+      date: '2023-06-02',
       content: '',
     },
     {
@@ -182,7 +190,7 @@ const App = () => {
       title: 'Aprende HTML! Curso Gratis desde Cero',
       rating: 2.4,
       userId: 4,
-      date: '',
+      date: '2023-05-02',
       content: '',
     },
     {
@@ -192,7 +200,7 @@ const App = () => {
       title: 'Cómo Estudiar Desarrollo Web en 2023 🚀',
       rating: 14,
       userId: 5,
-      date: '',
+      date: '2023-04-02',
       content: '',
     },
     {
@@ -202,7 +210,7 @@ const App = () => {
       title: 'Programación en Lenguaje Python',
       rating: 13,
       userId: 6,
-      date: '',
+      date: '2023-03-02',
       content: '',
     },
     {
@@ -215,6 +223,7 @@ const App = () => {
         githubLink: 'https://github.com/mouredev/Hello-Python/',
         rating: 10,
         userId: 1,
+        date: '2023-02-02',
     },
     {
         id: 8,
@@ -226,6 +235,7 @@ const App = () => {
         githubLink: 'https://github.com/mouredev/hello-sql/',
         rating: 2,
         userId: 1,
+        date: '2023-01-02',
     },
   ]);
 
@@ -233,12 +243,11 @@ const App = () => {
     const newId = blogEntries.length + 1; //Genera nuevo id
     const imgUrl =  URL.createObjectURL(newEntry.coverImg); //Crea url de la foto de portada
     const newDate = new Date().toLocaleDateString(); //Nueva fecha
-    const encodedAutor = encodeURIComponent(newEntry.autor)
     const updatedEntry = { ...newEntry, id: newId, coverImg: imgUrl, date: newDate };
     
     setBlogEntries((prevEntries) => {
         const updatedEntries = [...prevEntries, updatedEntry];
-        navigate(`/entry/${encodedAutor}/${newId}`); // Lleva a la página de entrada de blog
+        navigate(`/${currentUser.username}/${newId}`); // Lleva a la página de entrada de blog
         return updatedEntries;
     });
   };
@@ -253,7 +262,7 @@ const App = () => {
       <Route path='/' element={ <HomePage users={users} productos={blogEntries} searchQuery={searchQuery}/> }/>
       <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} users={users} currentUser={currentUser} blogEntries={blogEntries}/> }/>
       <Route path='/:username/:id' element={ <ProjectPage blogEntries={blogEntries} users={users}/> }/>
-      <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
+      <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry} currentUser={currentUser}/> }/>
       <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
       <Route path="/nosotros" element = {<NosotrosPage/>}/>
     </Routes>

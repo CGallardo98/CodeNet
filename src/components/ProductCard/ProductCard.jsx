@@ -16,7 +16,7 @@ const ProductCard = ({ producto, author }) => {
         <Link to={`/${author.username}`}>
           <p className="producto-autor">{author.name}</p>
         </Link>
-        <Link to={`/entry/${author.username}/${producto.id}`}>
+        <Link to={`/${author.username}/${producto.id}`}>
           <button>Leer Más</button>
         </Link>
     </div>

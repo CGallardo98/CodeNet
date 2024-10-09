@@ -38,13 +38,7 @@ const ProfilePage = ({ searchQuery, blogEntries, users, currentUser }) => {
                     alt={"${user.name}'s perfil"} 
                     className="profile-picture"
                 />
-                <h1 className="user-name">
-                    <a href={"https://mouredev.com/blog/"} 
-                    target="_blank" 
-                    rel="noopener noreferrer">
-                    {user.name}
-                </a></h1>
-                
+                <h1 className="user-name">{user.name}</h1>
                 <p className="user-bio">{user.bio}</p>
                 <p className="user-joined">Miembro desde: {user.memberSince}</p>
                 <p className="user-redes">{user.redes}</p>

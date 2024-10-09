@@ -91,7 +91,7 @@ const [activeButton, setActiveButton] = useState("Todos");
     
 
     <div className="producto-lista">
-      {displayedEntries.map( (producto) => {
+      {displayedEntries.sort((a,b) => new Date(b.date) - new Date(a.date)).map( (producto) => {
         const author = users.find((user) => user.id === producto.userId);
         return(
           <ProductCard key={producto.id} producto={producto} author={author}/>

@@ -11,7 +11,7 @@ import PreviewPopup from './PreviewPopup';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function ProjectFormPage({ addBlogEntry }) {
+export default function ProjectFormPage({ addBlogEntry, currentUser }) {
 
   const navigate = useNavigate();
 
@@ -19,12 +19,12 @@ export default function ProjectFormPage({ addBlogEntry }) {
     title: '',
     coverImg: '',
     category: null,
-    autor: 'Grupo 14',
     userImg: 'https://i.ibb.co/wggkRsK/image-Photoroom.png',
     content: '',
     sourceFile: null,
     githubLink: '',
     date: null,
+    userId: currentUser.id,
   })
 
   const [isFocused, setIsFocused] = useState(false);

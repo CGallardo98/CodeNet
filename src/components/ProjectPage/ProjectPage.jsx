@@ -9,7 +9,7 @@ export default function ProjectPage({ blogEntries, users }) {
   const entry = blogEntries.find((entry) => entry.id === parseInt(id));
   //Encuentra el autor según el username
   const author = users.find(user => username === user.username);
-  if (!entry && !author) {
+  if (!entry || !author) {
     return <div> Esta publicación no existe! </div>;
   };
 
