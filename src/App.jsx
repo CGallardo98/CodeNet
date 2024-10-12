@@ -12,21 +12,84 @@ import CategoryPage from './components/CategoryPage/CategoryPage';
 import './index.css'
 import NosotrosPage from './components/NosotrosPage/NosotrosPage';
 import { useNavigate } from 'react-router-dom';
-import { posts } from './components/ProfilePage/ProfilePage';
 
 
 const App = () => {
   const navigate = useNavigate();
+  const [users, setUsers] = useState([
+    {
+        id: 1,
+        email: 'mouredev@hotmail.com',
+        password: '1234',
+        username: 'mouredev',
+        name: 'MoureDev',
+        bio: 'Soy ingeniero de software desde hace más de 14 años. Actualmente trabajo como freelance full-stack y creo contenido formativo sobre programación y tecnología en redes.',
+        profilePicture: 'https://i.postimg.cc/ZKpWrBN2/moure.jpg', 
+        memberSince: '2023-01-01',
+        redes: 'https://www.youtube.com/@mouredev',
+    },
+    {
+      id: 2,
+      email: 'jab@hotmail.com',
+      password: '1234',
+      username: 'soyjab',
+      name: 'JAB',
+      bio: '',
+      profilePicture: 'https://yt3.googleusercontent.com/s4cUbevAGAhSoDDF5pJHTeSKepSOkdJB2IhnebmuK5nIXz3sRa2FIXZom9sEjtrkYA2zOYHByyQ=s160-c-k-c0x00ffffff-no-rj', 
+      memberSince: '2024-01-01',
+      redes: 'https://www.youtube.com/@soyjab',
+    },
+    {
+      id: 3, 
+      username: 'midudev',
+      name: 'MiduDev',
+      profilePicture: 'https://yt3.googleusercontent.com/wpc2B6nslz9DW_pd-KZjlQ26Ds9DLVom3yeMFy87sIZcfZGe7AXVqlZUvP-ePshI7VXvqiDRpWQ=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 4,
+      username: 'holamundo',
+      name: 'Hola Mundo Dev',
+      profilePicture: 'https://yt3.googleusercontent.com/Z69fhRL9_OaXsDz-XsCUe2sGIqU7G1F5Mwl0PwlBsx_ll13K0nLb47q7_RMen7NHvzMVDgd2=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 5,
+      username: 'miriamgonp',
+      name: 'Míriam González',
+      profilePicture: 'https://yt3.googleusercontent.com/3iTeMFNGrVQUXmYHfnvaR5NhS1C_F-4ckcELaeq2JMH6Ay_UzsDkWdACQTNMFLkIwcLe3VP6sA=s160-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      id: 6,
+      username: 'atsdev',
+      name: 'ATS',
+    },
+    {
+      id: 7,
+      username: 'grupo14',
+      name: 'Grupo 14 Talento Tech',
+      bio: 'Somos el Grupo 14 del Bootcamp de Programación Intermedio de Talento Tech. Integrantes: Juliana Ramírez, Rolando Ortega y Carolina Gallardo.',
+      porfilePicture: 'https://i.ibb.co/wggkRsK/image-Photoroom.png',
+      memberSince: '2024-09-20',
+    }
+]);
+
+  const currentUser = users[6]; //Simula el usuario que tiene la sesión iniciada
+  const userMap = {};
+  users.forEach(user => {
+    userMap[user.id] = user.name;
+  });
+  
   const [blogEntries, setBlogEntries] = useState([
     {
       id: 1,
       category: 'Git',
       coverImg: 'https://i.postimg.cc/Ls6q358J/Sin-ti-tulo-532-x-437-px.png',
-      title: 'Curso para Aprender a Trabajar con Git & GitHub',
+      title: 'Curso para Aprender Git & GitHub',
+      description: 'Git y GitHub son dos herramientas fundamentales en el mundo del desarrollo de software. Este es un curso desde cero creado para aprender a trabajar con ellas y así mejorar como programadores.',
+      githubLink: 'https://github.com/mouredev/hello-git/',
       rating: 8.6,
-      autor: 'MoureDev',
+      userId: 1,
       userImg: '/mouredev.png',
-      date: '',
+      date: '2023-08-02',
       content: `
         <blockquote>
           <p>Si consideras útil el curso, apóyalo haciendo "★ Star" en el <a href="https://github.com/mouredev/hello-git?tab=readme-ov-file#nuevo-libro-de-git--github-desde-cero-segunda-edición" target="_blank" rel="noopener noreferrer">repositorio</a>. ¡Gracias!</p>
@@ -111,9 +174,9 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/wvmzDbFD/react.png',
       title: 'Curso de React 🚀 + Actividades Prácticas',
       rating: 2.3,
-      autor: 'JAB',
+      userId: 2,
       userImg: '',
-      date: '',
+      date: '2023-07-02',
       content: '',
     },
     {
@@ -122,8 +185,8 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/XN1KrHms/Disen-o-sin-ti-tulo-13.png',
       title: '100 Proyectos de JavaScript con Videos',
       rating: 2.1,
-      autor: 'MiduDev',
-      date: '',
+      userId: 3,
+      date: '2023-06-02',
       content: '',
     },
     {
@@ -132,8 +195,8 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/gcLy6qpd/Disen-o-sin-ti-tulo-14.png',
       title: 'Aprende HTML! Curso Gratis desde Cero',
       rating: 2.4,
-      autor: 'Hola Mundo Dev',
-      date: '',
+      userId: 4,
+      date: '2023-05-02',
       content: '',
     },
     {
@@ -142,8 +205,8 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/GmdvNWyh/Disen-o-sin-ti-tulo-15.png',
       title: 'Cómo Estudiar Desarrollo Web en 2023 🚀',
       rating: 14,
-      autor: 'Míriam González',
-      date: '',
+      userId: 5,
+      date: '2023-04-02',
       content: '',
     },
     {
@@ -152,9 +215,33 @@ const App = () => {
       coverImg: 'https://i.postimg.cc/k54Cj5MN/Disen-o-sin-ti-tulo-18.png',
       title: 'Programación en Lenguaje Python',
       rating: 13,
-      autor: 'ATS',
-      date: '',
+      userId: 6,
+      date: '2023-03-02',
       content: '',
+    },
+    {
+        id: 7,
+        category: 'Python',
+        coverImg: 'https://i.postimg.cc/fRVmtSzV/Py0.png',
+        title: 'Curso para Aprender Python desde cero',
+        description: 'Python es el lenguaje de programación más popular de 2022. Este es un curso desde cero para principiantes creado para aprender los fundamentos desde su base hasta lo más avanzado.',
+        content: '',
+        githubLink: 'https://github.com/mouredev/Hello-Python/',
+        rating: 10,
+        userId: 1,
+        date: '2023-02-02',
+    },
+    {
+        id: 8,
+        category: 'SQL',
+        coverImg: 'https://i.postimg.cc/QN6FQNn1/SQL0.png',
+        title: 'Curso para Aprender SQL y BD Relacionales',
+        description: 'Curso completo de 7 horas para aprender los fundamentos del lenguaje SQL y bases de datos relacionales. Más de 80 lecciones y 50 comandos desde cero. Con MySQL y PostgreSQL.',
+        content: '',
+        githubLink: 'https://github.com/mouredev/hello-sql/',
+        rating: 2,
+        userId: 1,
+        date: '2023-01-02',
     },
   ]);
 
@@ -162,12 +249,11 @@ const App = () => {
     const newId = blogEntries.length + 1; //Genera nuevo id
     const imgUrl =  URL.createObjectURL(newEntry.coverImg); //Crea url de la foto de portada
     const newDate = new Date().toLocaleDateString(); //Nueva fecha
-    const encodedAutor = encodeURIComponent(newEntry.autor)
     const updatedEntry = { ...newEntry, id: newId, coverImg: imgUrl, date: newDate };
     
     setBlogEntries((prevEntries) => {
         const updatedEntries = [...prevEntries, updatedEntry];
-        navigate(`/entry/${encodedAutor}/${newId}`); // Lleva a la página de entrada de blog
+        navigate(`/${currentUser.username}/${newId}`); // Lleva a la página de entrada de blog
         return updatedEntries;
     });
   };
@@ -177,13 +263,13 @@ const App = () => {
 
   return (
     <>
-    <Header setSearchQuery={setSearchQuery}/> {/* El Header presente en todas las páginas */}
+    <Header setSearchQuery={setSearchQuery} user={currentUser}/> {/* El Header presente en todas las páginas */}
     <Routes>
-      <Route path='/' element={ <HomePage productos={blogEntries} searchQuery={searchQuery}/> }/>
-      <Route path='/profile' element={ <ProfilePage searchQuery={searchQuery}/> }/>
-      <Route path='/entry/:autor/:id' element={ <ProjectPage blogEntries={[...blogEntries, ...posts]}/> }/>
-      <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry}/> }/>
-      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
+      <Route path='/' element={ <HomePage users={users} userMap={userMap} productos={blogEntries} searchQuery={searchQuery}/> }/>
+      <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} users={users} currentUser={currentUser} blogEntries={blogEntries}/> }/>
+      <Route path='/:username/:id' element={ <ProjectPage blogEntries={blogEntries} users={users}/> }/>
+      <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry} currentUser={currentUser}/> }/>
+      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} users={users}/>} /> {/* Nueva ruta */}
       <Route path="/nosotros" element = {<NosotrosPage/>}/>
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}

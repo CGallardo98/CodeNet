@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';  // Componente del buscador
 import LanguageSwitcher from './LanguageSwitcher';  // Componente del selector de idioma
 import './Header.css';
 
-function Header({ setSearchQuery }) {
+function Header({ setSearchQuery, user }) {
   return (
     <div className=''>
       <header className="header">
@@ -25,7 +25,7 @@ function Header({ setSearchQuery }) {
           <Link to="/">
             <FaHome className='nav-icon'/> Inicio
           </Link>
-          <Link to="/profile">
+          <Link to={`/${user.username}`}>
             <FaUser className='nav-icon'/> Perfil
           </Link>
           <Link to="/nosotros">

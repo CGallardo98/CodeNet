@@ -2,16 +2,16 @@ import './ProjectPage.css';
 import { useParams } from "react-router-dom";
 import DOMPurify from 'dompurify';
 
-export default function ProjectPage({ blogEntries }) {
-  const {id, autor} = useParams();
+export default function ProjectPage({ blogEntries, users }) {
+  const {id, username} = useParams();
 
-  // Decodifica el nombre del autor
-  const entry = blogEntries.find((entry) => entry.id === parseInt(id) && entry.autor === autor);
-  if (!entry) {
+  //Encuentra la entrada correspondiente según el id
+  const entry = blogEntries.find((entry) => entry.id === parseInt(id));
+  //Encuentra el autor según el username
+  const author = users.find(user => username === user.username);
+  if (!entry || !author) {
     return <div> Esta publicación no existe! </div>;
   };
-  const decodedAutor = decodeURIComponent(entry.autor);
-  
 
   return (
     <div className="blog-entry-page">
@@ -22,10 +22,10 @@ export default function ProjectPage({ blogEntries }) {
 
       <div className="author-info">
         <img className="author-img"
-          src={entry.userImg}
-          alt={decodedAutor || 'Author'} 
+          src={author.profilePicture}
+          alt={ 'Author'} 
         />
-        <span className="author-name">{decodedAutor}</span>
+        <span className="author-name">{author.name}</span>
         <span className="blog-date">
           {entry.date ? new Date(entry.date).toLocaleDateString() : ''}
         </span>

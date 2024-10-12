@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import ImageSection from "./ImageSection";
 import "./HomePage.css";
 
-export default function HomePage({searchQuery, productos}) {
+export default function HomePage({searchQuery, users, userMap, productos}) {
 
 //Filtro de productos
 const [filtroproducto, setFiltroproducto] = useState(productos)  
@@ -50,10 +50,11 @@ const [activeButton, setActiveButton] = useState("Todos");
 
   //Implementación de la búsqueda
   const displayedEntries = filtroproducto.filter(entry => { ///// --->> filta la búsqueda sobre el filtro de tab existente
+    const author = userMap[entry.userId] || '';
     return (
       entry.title.toLowerCase().includes(searchQuery.toLowerCase()) || //Retorna títulos que correspondan con la búsqueda
       entry.category.toLowerCase().includes(searchQuery.toLowerCase()) || //Retorna categorías que correspondan con la búsqueda
-      entry.autor.toLowerCase().includes(searchQuery.toLowerCase()) //Retorna autores que correspondan con la búsqueda
+      author.toLowerCase().includes(searchQuery.toLowerCase()) //Retorna autores que correspondan con la búsqueda
     );
   })
 
@@ -91,9 +92,12 @@ const [activeButton, setActiveButton] = useState("Todos");
     
 
     <div className="producto-lista">
-      {displayedEntries.map(producto => (
-      <ProductCard key={producto.id} producto={producto} />
-      ))}
+      {displayedEntries.sort((a,b) => new Date(b.date) - new Date(a.date)).map( (producto) => {
+        const author = users.find((user) => user.id === producto.userId);
+        return(
+          <ProductCard key={producto.id} producto={producto} author={author}/>
+        );
+      })}
     </div>
 
     </>
