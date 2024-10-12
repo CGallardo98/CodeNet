@@ -71,7 +71,13 @@ const App = () => {
       memberSince: '2024-09-20',
     }
 ]);
+
   const currentUser = users[6]; //Simula el usuario que tiene la sesión iniciada
+  const userMap = {};
+  users.forEach(user => {
+    userMap[user.id] = user.name;
+  });
+  
   const [blogEntries, setBlogEntries] = useState([
     {
       id: 1,
@@ -259,11 +265,11 @@ const App = () => {
     <>
     <Header setSearchQuery={setSearchQuery} user={currentUser}/> {/* El Header presente en todas las páginas */}
     <Routes>
-      <Route path='/' element={ <HomePage users={users} productos={blogEntries} searchQuery={searchQuery}/> }/>
+      <Route path='/' element={ <HomePage users={users} userMap={userMap} productos={blogEntries} searchQuery={searchQuery}/> }/>
       <Route path='/:username' element={<ProfilePage searchQuery={searchQuery} users={users} currentUser={currentUser} blogEntries={blogEntries}/> }/>
       <Route path='/:username/:id' element={ <ProjectPage blogEntries={blogEntries} users={users}/> }/>
       <Route path='/entry/new' element={ <ProjectFormPage addBlogEntry={addBlogEntry} currentUser={currentUser}/> }/>
-      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} />} /> {/* Nueva ruta */}
+      <Route path="/category/:categoria" element={<CategoryPage productos={blogEntries} users={users}/>} /> {/* Nueva ruta */}
       <Route path="/nosotros" element = {<NosotrosPage/>}/>
     </Routes>
     <Footer /> {/* El footer presente en todas las páginas */}

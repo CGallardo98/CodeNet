@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 import "./CategoryPage.css";
 
-const CategoryPage = ({ productos }) => {
+const CategoryPage = ({ productos, users }) => {
   const { categoria } = useParams();
   const [productosFiltrados, setProductosFiltrados] = useState([]);
 
@@ -22,9 +22,12 @@ const CategoryPage = ({ productos }) => {
       <h2>Productos en la categoría: {categoria}</h2>
       <div className="producto-lista">
         {productosFiltrados.length > 0 ? (
-          productosFiltrados.map((producto) => (
-            <ProductCard key={producto.id} producto={producto} />
-          ))
+          productosFiltrados.map((producto) => {
+            const author = users.find((user) => user.id === producto.userId); // Encuentra el autor
+            return(
+              <ProductCard key={producto.id} producto={producto} author={author}/>
+            );
+        })
         ) : (
           <p>No hay publicaciones disponibles en esta categoría.</p>
         )}
